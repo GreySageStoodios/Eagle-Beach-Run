@@ -21,12 +21,56 @@
 ;; Begin function defintions.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+    ;; EBR note: added eco-manager
+    (defun eco-manager ()
+
+    ;;Eco-darkk start
+    (when (send-event *target* 'query 'powerup (pickup-type eco-darkk))
+    (set! *has-darkk-eco* #t)
+    (draw-black *target*)
+
+    )
+
+    (when (not (send-event *target* 'query 'powerup (pickup-type eco-darkk)))
+    (set! *has-darkk-eco* #f)
+
+    )
+
+    ;;Eco-whyte start
+    ;;logic-target.gc, for gravity controls
+    (when (send-event *target* 'query 'powerup (pickup-type eco-whyte))
+    (set! *has-whyte-eco* #t)
+    (draw-white *target*)
+
+    )
+
+    (when (not (send-event *target* 'query 'powerup (pickup-type eco-whyte)))
+    (set! *has-whyte-eco* #f)
+
+    )
+    
+    ;;Eco-lightt start
+    (when (send-event *target* 'query 'powerup (pickup-type eco-lightt))
+    (set! *has-lightt-eco* #t)
+    (draw-normal *target*)
+
+    )
+
+    (when (not (send-event *target* 'query 'powerup (pickup-type eco-lightt)))
+    (set! *has-lightt-eco* #f)
+
+    )
+
+    (none))
+    
 (defun runs-every-frame ()
   ;;(increase-power-cell-by-one) This is a call to increase-power-cell-by-one defined in mod-common-functions.gc
   (if *show-input-display* (input-display-on) (input-display-off))
   ;; ensure orb-placer is spawned/killed as requested, debug menu is updated
   (when *debug-segment*
     (orb-placer-maintenance))
+    ;; EBR note: added eco-manager to run every frame
+  (eco-manager) ;;checks constantly eco=y/n, type, then gives effect or turns it off
   (none))
 
 (defun runs-on-orb-pickup ((parent process-tree))
@@ -72,7 +116,18 @@
        )
       (((pickup-type eco-green))
        ;; Code here runs as soon as you pickup big green eco 
-       ))
+       )
+       ;;EBR note: added custom eco types for easy modding
+      (((pickup-type eco-darkk))
+       ;; Code here runs as soon as you pickup yellow eco
+       )
+      (((pickup-type eco-whyte))
+       ;; Code here runs as soon as you pickup red eco
+       )
+      (((pickup-type eco-lightt))
+       ;; Code here runs as soon as you pickup blue eco
+       )
+        )
     (when from-vent?
       ;; Code here runs only if the eco was picked up from a vent
       ))
@@ -93,6 +148,23 @@
      ;; Code here runs after jak dies (and any death cutscene finishes), during the blackout before he spawns
      ))
   (none))
+
+;; EBR note: added to print water-vol
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Checking Water Planes:
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun print-water-vol-planes ((water water-vol))
+  (format #t "water-vol:~%")
+  (dotimes (i (-> water vol pos-vol 0 num-planes))
+   (let ((plane (-> water vol pos-vol 0 plane i)))
+    (format #t "plane ~D:~%x: ~m ~%y: ~m~%z: ~m~%w: ~m~%" i 
+      (-> plane x) (-> plane y) (-> plane z) (-> plane w)
+      )
+      )
+    )
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; deprecated function defintions.

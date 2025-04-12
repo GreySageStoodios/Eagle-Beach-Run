@@ -12,7 +12,10 @@
 (set! *load-boundary-list* (the-as load-boundary #f))
 
 (define *static-load-boundary-list*
-  (static-lb-list (static-load-boundary :flags
+  (static-lb-list 
+;;EBR note: commented out ALL vanilla load boundarys to test levels
+#|
+                  (static-load-boundary :flags
                                         ()
                                         :top 404182.7500
                                         :bot -524288.0000
@@ -1496,5 +1499,7 @@
                                         (checkpt "finalboss-fight" #f)
                                         :bwd
                                         (checkpt "finalboss-start" #f))))
+|#
+  ))
 
 (doarray (i *static-load-boundary-list*) (load-boundary-from-template (the-as (array object) i)))

@@ -479,6 +479,10 @@
   (eco-pill)
   (buzzer)
   (eco-pill-random)
+  ;; EBR note: added custom eco types
+  (eco-darkk)
+  (eco-whyte)
+  (eco-lightt)
   )
 
 (defenum load-msg-result

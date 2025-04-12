@@ -1,0 +1,2192 @@
+{
+  "long_name": "hid-beach",
+  "iso_name": "HIDBEACH",
+  "nickname": "hdb", // 3 char name, all lowercase
+  "gltf_file": "custom_assets/jak1/levels/hid-beach/hid-beach.glb",
+  "automatic_wall_detection": true,
+  "automatic_wall_angle": 45.0,
+  "double_sided_collide": false,
+  "base_id": 1000,
+  "art_groups": [
+    ////////////
+    // Zoomer //
+    ////////////
+    //
+    "racer-ag", // zoomer
+    ///////////
+    // Water //
+    ///////////
+    //
+    //"water-anim-training-ag", //water-gyser
+    /////////////////////
+    // Uncommon Actors //
+    /////////////////////
+    //
+    //"bounceytarp-ag", // springbox//
+    "orb-cache-top-ag" // orb cache top
+    //"plat-ag", // platform//
+    //"plat-eco-ag" // blue eco platform//
+    //"wall-plat-ag", // wall platform
+    ///////////////
+    // Warp Gate //
+    ///////////////
+    //
+    //"warp-gate-switch-ag", // warpgate switch//
+    ///////////
+    // Doors //
+    ///////////
+    //
+    //"sun-iris-door-ag", // iris door - sunken level//
+    //"jng-iris-door-ag", // eco door - geyser level//
+    //"maindoor-ag",
+    //"launcherdoor-ag",
+    ///////////////////////
+    // Breakable Boulder //
+    ///////////////////////
+    //
+    //"shortcut-boulder-ag", // ogre breakable rock
+    //"dark-crystal-ag", // ogre breakable rock?
+    /////////////
+    // Enemies //
+    /////////////
+    //
+    //"lurkerworm-ag", // lurkerworm//
+    //"babak-ag", // babak lurker//
+    //"babak-with-cannon-ag", // babak-with-cannon
+    //"sharkey-ag", // sharkey 
+    ////////////
+    // Cannon //
+    ////////////
+    //
+    //"mistycannon-ag" // lurker cannon//
+  ],
+  "custom_models": [
+    //"test-actor"
+  ],
+  "textures": [
+    //  Zoomer HUD textures
+    ["zoomerhud"],
+    //  Sky textures
+    //["training-vis-alpha"]
+    //["village1-vis-alpha"]
+    //["beach-vis-alpha"]
+    //["jungle-vis-alpha"]
+    //["misty-vis-alpha"]
+    //["firecanyon-vis-alpha"]
+    //["village2-vis-alpha"]
+    //["rolling-vis-alpha"]
+    //["sunkenb-vis-alpha"]
+    //["swamp-vis-alpha"]
+    //["ogre-vis-alpha"]
+    //["village3-vis-alpha"]
+    //["snow-vis-alpha"]
+    ["finalboss-vis-alpha"]
+  ],
+  //
+  "tex_remap":
+  //
+    //"training",
+    //"village1",
+    //"beach",
+    //"jungle",
+    //"misty",
+    //"firecanyon",
+    //"village2",
+    //"rolling",
+    //"sunkenb",
+    //"swamp",
+    //"ogre",
+    //"village3",
+    //"snow",
+    "finalboss",
+  //
+  "sky": 
+  //
+    //    basic vanilla/purple:
+    //"training",   // tpage-1308.go
+    //"village1",   // tpage-401.go
+    //    didn't work:
+    //"beach",      // tpage-215.go
+    //"jungle",     // tpage-388.go
+    //    foggy:
+    //"misty",      // tpage-520.go
+    //    red/orange hue:
+    //"firecanyon", // tpage-1123.go
+    //    grey/dark cloudy overcast:
+    //"village2",   // tpage-921.go
+    //"rolling",    // tpage-925.go
+    //    didnt work:
+    //"sunkenb",    // tpage-162.go
+    //    hazy blue hue:
+    //"swamp",      // tpage-630.go
+    //    grey/dark cloudy overcast:
+    //"ogre",       // tpage-1117.go
+    //    basic vanilla/purple maybe more grey:
+    //"village3",   // tpage-1194.go
+    //"snow",       // tpage-712.go
+    //    purple/blue hue:
+    "finalboss",  // tpage-1418.go
+  //
+  "tpages": [
+  ],
+  "ambients": [
+  ],
+  "actors" : [
+//////////////
+// WARPGATE //
+//////////////
+//
+//Warpgates below
+/*
+    {
+      "trans": [-17.3203, 5.0, 25.9819], // translation
+      "etype": "warpgate",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [-17.3203, 5.0, 25.9819, 10], // bounding sphere
+      "lump": {
+        "name":"hid-beach-warpgate-01"
+      }
+    },
+    {
+      "trans": [-10.677, 1.79961, 26.124], 
+      "etype": "warp-gate-switch",
+      "game_task": 0,//123 (hid-beach-button)
+      "quat" : [0.023153, 0.001519, -0.043499, 0.998784],
+      "bsphere": [-10.677, 1.79961, 26.124, 10],
+      "lump": {
+        "name": "hid-beach-warp-gate-switch",
+    "alt-actor": "hid-beach-warpgate-part-1"
+      }
+    },
+    {
+      "trans": [-17.3203, 5.0, 25.9819], 
+      "etype": "hidbeach-part",
+      "game_task": 0,
+      "quat" : [0.0, 0.0, 0.0, 1],
+      "bsphere": [-17.3203, 5.0, 25.9819, 10],
+      "lump": {
+        "name": "hid-beach-warpgate-part-1",
+    "effect-name": "'warpgate-loop",
+        "art-name":"group-hidbeach-warpgate",
+        "effect-param": ["float", 3.0000, 80.0000, 12.0000, 40.0000],
+        "cycle-speed": ["float", -1.0000, 0.0000],
+        "rot": ["float", -1.0000, -1.0000,-1.0]
+      }
+    },
+*/
+  //{
+  //  "trans": [-48.0, 5.0, 28.0], // translation
+  //  "etype": "hidbeach-part",  // actor type
+  //  "game_task": 0, // associated game task (for powercells, etc)
+  //  "quat" : [0, 0, 0, 1], // quaternion
+  //  "bsphere": [-48.0, 5.0, 28.0, 10], // bounding sphere
+  //  "lump": {
+  //    "name":"hid-beach-warpmiddle-01"
+  //  }
+  //},
+////////////////
+// WATERFALLS //
+////////////////
+//
+/////////////////////
+// Eco SmokeStacks //
+/////////////////////
+//
+///////////////////////
+// Zoomer Collection //
+///////////////////////
+//
+//Zoomers below
+///*
+    {
+      "trans": [-56.3998, 2.96022, 47.4792],
+      "etype": "racer",
+      "game_task":  0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [-56.3998, 2.96022, 47.4792, 10],
+      "lump": {
+        "name":"hid-beach-racer-01" //
+        //"index": ["int32", 2], // makes it so won't spawn until task is completed
+        //"rotoffset": ["meters", 3.3333]
+      }
+    },
+//*/
+//////////////////////////
+// Flut Flut Collection //
+//////////////////////////
+//
+//Flut Fluts below
+///*
+//*/
+///////////
+// CELLS //
+///////////
+//
+//Cells below
+///*
+    {
+        "trans": [34.0, 5.00, 100.0], // hid-beach-findcell
+        "etype": "fuel-cell",
+        "game_task": 0, //117,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [34.0, 5.00, 100.0, 10],
+        "lump": {
+            "name": "hid-beach-fuel-cell-1",
+            "eco-info": ["int32", 6, 117]
+        }
+    },
+/*
+    {
+      "trans": [4.0, 75.00, 0.0], // hid-beach-zeppelin
+      "etype": "fuel-cell",
+      "game_task": 0, //117,
+      "quat": [0, 0, 0, 1],
+      "bsphere": [4.0, 75.00, 0.0, 10],
+      "lump": {
+          "name": "hid-beach-fuel-cell-2",
+          "eco-info": ["int32", 6, 119]
+      }
+    },
+    {
+        "trans": [217.0, 15.0, 0.0], // hid-beach-cave
+        "etype": "fuel-cell",
+        "game_task": 0, //117,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [217.0, 15.0, 0.0, 10],
+        "lump": {
+            "name": "hid-beach-fuel-cell-3",
+            "eco-info": ["int32", 6, 120]
+        }
+    },
+    {
+        "trans": [242.0, -106.0, 0.0], // hid-beach-basement
+        "etype": "fuel-cell",
+        "game_task": 0, //117,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [242.0, -106.0, 0.0, 10],
+        "lump": {
+            "name": "hid-beach-fuel-cell-4",
+            "eco-info": ["int32", 6, 121]
+        }
+    },
+*/
+//////////
+// ORBS //
+//////////
+//
+//Orbs below
+///*
+    {
+        "trans": [-2.0, 5.00, 70.0],
+        "etype": "money",
+        "game_task": 0,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [-2.0, 5.00, 70.0, 10],
+        "lump": {
+            "name": "hid-beach-money-1"
+        }
+    },
+    {
+        "trans": [ 4.0, 5.00, 70.0],
+        "etype": "money",
+        "game_task": 0,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [4.0, 5.00, 70.0, 10],
+        "lump": {
+            "name": "hid-beach-money-2"
+        }
+    },
+    {
+        "trans": [10.0, 5.00, 70.0],
+        "etype": "money",
+        "game_task": 0,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [10.0, 5.00, 70.0, 10],
+        "lump": {
+            "name": "hid-beach-money-3"
+        }
+    },
+    {
+        "trans": [16.0, 5.00, 70.0],
+        "etype": "money",
+        "game_task": 0,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [16.0, 5.00, 70.0, 10],
+        "lump": {
+            "name": "hid-beach-money-4"
+        }
+    },
+    {
+        "trans": [22.0, 5.00, 70.0],
+        "etype": "money",
+        "game_task": 0,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [22.0, 5.00, 70.0, 10],
+        "lump": {
+            "name": "hid-beach-money-5"
+        }
+    },
+    {
+        "trans": [28.0, 5.00, 70.0],
+        "etype": "money",
+        "game_task": 0,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [28.0, 5.00, 70.0, 10],
+        "lump": {
+            "name": "hid-beach-money-6"
+        }
+    },
+//*/
+////////////
+// CRATES //
+////////////
+//
+//Iron Boxes (Scout Flies) below 
+// hid-beach-buzzer
+// to get SF task = game-task + (2^16 * buzzer-count)
+// buzzer-count starts at 0 (fly #1), and ends at 6 (fly #7)
+/*
+    {
+        "trans": [-2.0, 5.00, 130.0],
+        "etype": "crate",
+        "game_task": 122,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [-2.0, 5.00, 130.0, 10],
+        "lump": {
+            "name": "hid-beach-crate-'iron-scout-1",
+            "crate-type": "'iron",
+            "eco-info": ["int32", 8, 122] // task = game-task + (0)
+        }
+    },
+    {
+        "trans": [4.0, 5.00, 130.0],
+        "etype": "crate",
+        "game_task": 122,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [4.0, 5.00, 130.0, 10],
+        "lump": {
+            "name": "hid-beach-crate-'iron-scout-2",
+            "crate-type": "'iron",
+            "eco-info": ["int32", 8, 65658] // task = game-task + (65,536)
+        }
+    },
+    {
+        "trans": [10.0, 5.00, 130.0],
+        "etype": "crate",
+        "game_task": 122,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [10.0, 5.00, 130.0, 10],
+        "lump": {
+            "name": "hid-beach-crate-'iron-scout-3",
+            "crate-type": "'iron",
+            "eco-info": ["int32", 8, 131194] // task = game-task + (131,072)
+        }
+    },
+    {
+        "trans": [16.0, 5.00, 130.0],
+        "etype": "crate",
+        "game_task": 122,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [16.0, 5.00, 130.0, 10],
+        "lump": {
+            "name": "hid-beach-crate-'iron-scout-4",
+            "crate-type": "'iron",
+            "eco-info": ["int32", 8, 196730] // task = game-task + (196,608)
+        }
+    },
+    {
+        "trans": [22.0, 5.00, 130.0],
+        "etype": "crate",
+        "game_task": 122,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [22.0, 5.00, 130.0, 10],
+        "lump": {
+            "name": "hid-beach-crate-'iron-scout-5",
+            "crate-type": "'iron",
+            "eco-info": ["int32", 8, 262266] // task = game-task + (262,144)
+        }
+    },
+    {
+        "trans": [28.0, 5.00, 130.0],
+        "etype": "crate",
+        "game_task": 122,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [28.0, 5.00, 130.0, 10],
+        "lump": {
+            "name": "hid-beach-crate-'iron-scout-6",
+            "crate-type": "'iron",
+            "eco-info": ["int32", 8, 327802] // task = game-task + (327,680)
+        }
+    },
+    {
+        "trans": [34.0, 5.00, 130.0],
+        "etype": "crate",
+        "game_task": 122,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [34.0, 5.00, 130.0, 10],
+        "lump": {
+            "name": "hid-beach-crate-'iron-scout-7",
+            "crate-type": "'iron",
+            "eco-info": ["int32", 8, 393338] // task = game-task + (393,216)
+        }
+    },
+*/
+//Wood Barrels below
+///*
+    {
+        "trans": [-2.0, 5.00, 100.0],
+        "etype": "crate",
+        "game_task": 0,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [-2.0, 5.00, 100.0, 10],
+        "lump": {
+            "name": "hid-beach-crate-'barrel-green-1",
+            "crate-type": "'barrel"
+        }
+    },
+//*/
+//Wood Chests (Eco-Green) below
+///*
+    {
+        "trans": [4.0, 5.00, 100.0],
+        "etype": "crate",
+        "game_task": 0,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [4.0, 5.00, 100.0, 10],
+        "lump": {
+            "name": "hid-beach-crate-'wood-green-1",
+            "crate-type": "'wood",
+            "eco-info": ["int32", 4, 1]
+        }
+    },
+//*/
+//Buckets (Empty) below
+///*
+{
+  "trans": [10.0, 5.00, 100.0],
+  "etype": "crate",
+  "game_task": 0,
+  "quat": [0, 0, 0, 1],
+  "bsphere": [10.0, 5.00, 100.0, 10],
+  "lump": {
+      "name": "hid-beach-crate-'bucket-none-1",
+      "crate-type": "'bucket"
+  }
+},
+//*/
+//Buckets (Cells) below
+///*
+//*/
+//Steel Boxes (Orbs) below
+///*
+{
+  "trans": [16.0, 5.00, 100.0],
+  "etype": "crate",
+  "game_task": 0,
+  "quat": [0, 0, 0, 1],
+  "bsphere": [16.0, 5.00, 100.0, 10],
+  "lump": {
+      "name": "hid-beach-crate-'steel-orbs-1",
+      "crate-type": "'steel",
+      "eco-info": ["int32", 5, 7],
+      "options": ["int32", 8192] // zoomer goes through
+  }
+},
+//*/
+//Steel Boxes (Cells) below
+///*
+{
+  "trans": [22.0, 5.00, 100.0], // hid-beach-crate
+  "etype": "crate",
+  "game_task": 118,
+  "quat": [0, 0, 0, 1],
+  "bsphere": [22.0, 5.00, 100.0, 10],
+  "lump": {
+      "name": "hid-beach-crate-'steel-cells-1",
+      "crate-type": "'steel",
+      "eco-info": ["int32", 6, 118],
+      "options": ["int32", 8192] // zoomer goes through
+  }
+},
+//*/
+//Steel Boxes (Eco-Blue) below
+///*
+//*/
+//Steel Boxes (Eco-Red) below
+///*
+//*/
+//Steel Boxes (Eco-Yellow) below
+///*
+//*/
+//Dark Eco Boxes below
+///*
+    {
+        "trans": [28.0, 5.00, 100.0],
+        "etype": "crate",
+        "game_task": 0,
+        "quat": [0, 0, 0, 1],
+        "bsphere": [28.0, 5.00, 100.0, 10],
+        "lump": {
+            "name": "hid-beach-crate-'darkeco-1",
+            "crate-type": "'darkeco"
+        }
+    },
+//*/
+////////////////
+// Orb Caches //
+////////////////
+//
+//Orb Caches below
+///*
+    {
+      "trans": [34.0, 5.00, 70.0],
+      "etype": "orb-cache-top",
+      "game_task": 0,
+      "quat": [0, 0, 0, 1],
+      "bsphere": [34.0, 5.00, 70.0, 10],
+      "lump": {
+          "name": "hid-beach-orb-cache-top-1",
+          "orb-cache-count": ["int32", 15],
+          "vis-dist": ["meters", 200.0],
+          "light-index": ["int32", 1]
+      }
+    },
+//*/
+///////////////
+// ECO BLOBS //
+///////////////
+//
+//Yellow Eco below
+///*
+    {
+      "trans": [-2.0, 5.0, 50.0],
+      "etype": "eco-yellow",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [-2.0, 5.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-eco-yellow-1"
+      }
+    },
+//*/
+//Red Eco below
+///*
+    {
+      "trans": [4.0, 5.0, 50.0],
+      "etype": "eco-red",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [4.0, 5.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-eco-red-1"
+      }
+    },
+//*/
+//Blue Eco below
+///*
+    {
+      "trans": [10.0, 5.0, 50.0],
+      "etype": "eco-blue",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [10.0, 5.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-eco-blue-1"
+      }
+    },
+//*/
+//Green Eco below
+///*
+    {
+      "trans": [16.0, 5.0, 50.0],
+      "etype": "health",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [16.0, 5.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-eco-green-1"
+      }
+    },
+//*/
+//Dark Eco below
+///*
+    {
+      "trans": [22.0, 5.0, 50.0],
+      "etype": "eco-darkk",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [22.0, 5.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-eco-darkk-1"
+      }
+    },
+//*/
+//White Eco below
+///*
+    {
+      "trans": [28.0, 5.0, 50.0],
+      "etype": "eco-whyte",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [28.0, 5.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-eco-whyte-1"
+      }
+    },
+//*/
+//Light Eco below
+///*
+    {
+      "trans": [34.0, 5.0, 50.0],
+      "etype": "eco-lightt",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [34.0, 5.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-eco-lightt-1"
+      }
+    },
+//*/
+///////////////
+// ECO VENTS //
+///////////////
+//
+//Yellow Eco Vents below
+///*
+    {
+      "trans": [-2.00, 5.00, 30.00],
+      "etype": "ecovent",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [-2.00, 5.00, 30.00, 10.0],
+      "lump": {
+        "name": "hid-beach-ecovent-yellow-1",
+        "eco-info": ["int32", 1, 1]//,
+        //"alt-actor": "stilt-village-crate-'bucket-cell-1"
+      }
+    },
+//*/
+//Red Eco Vents below
+///*
+    {
+      "trans": [4.00, 5.00, 30.00],
+      "etype": "ecovent",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [4.00, 5.00, 30.00, 10.0],
+      "lump": {
+        "name": "hid-beach-ecovent-red-1",
+        "eco-info": ["int32", 2, 1]//,
+        //"alt-actor": "stilt-village-crate-'bucket-cell-1"
+      }
+    },
+//*/
+//Blue Eco Vents below
+///*
+    {
+      "trans": [10.00, 5.00, 30.00],
+      "etype": "ecovent",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [10.00, 5.00, 30.00, 10.0],
+      "lump": {
+        "name": "hid-beach-ecovent-blue-1",
+        "eco-info": ["int32", 3, 1]//,
+        //"alt-actor": "stilt-village-crate-'bucket-cell-1"
+      }
+    },
+//*/
+//Green Eco Vents below
+///*
+    {
+      "trans": [16.00, 5.00, 30.00],
+      "etype": "ecovent",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [16.00, 5.00, 30.00, 10.0],
+      "lump": {
+        "name": "hid-beach-ecovent-green-1",
+        "eco-info": ["int32", 4, 1]//,
+        //"alt-actor": "stilt-village-crate-'bucket-cell-1"
+      }
+    },
+//*/
+//Dark Eco Vents below
+///*
+    {
+      "trans": [22.00, 5.00, 30.00],
+      "etype": "ecovent",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [22.00, 5.00, 30.00, 10.0],
+      "lump": {
+        "name": "hid-beach-ecovent-dark-1",
+        "eco-info": ["int32", 10, 1]//,
+        //"alt-actor": "stilt-village-crate-'bucket-cell-1"
+      }
+    },
+//*/
+//White Eco Vents below
+///*
+    {
+      "trans": [28.00, 5.00, 30.00],
+      "etype": "ecovent",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [28.00, 5.00, 30.00, 10.0],
+      "lump": {
+        "name": "hid-beach-ecovent-white-1",
+        "eco-info": ["int32", 11, 1]//,
+        //"alt-actor": "stilt-village-crate-'bucket-cell-1"
+      }
+    },
+//*/
+//Light Eco Vents below
+///*
+    {
+      "trans": [34.00, 5.00, 30.00],
+      "etype": "ecovent",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [34.00, 5.00, 30.00, 10.0],
+      "lump": {
+        "name": "hid-beach-ecovent-light-1",
+        "eco-info": ["int32", 12, 1]//,
+        //"alt-actor": "stilt-village-crate-'bucket-cell-1"
+      }
+    },
+//*/
+/////////////////
+// PLATFORMING //
+/////////////////
+//
+//Platforms below
+/*
+    {
+        "trans": [-2.0, 49.775474548339844, -10.0],
+        "etype": "plat",
+        "game_task": 0,
+        "quat" : [0, 0, 0, 1],
+        "bsphere": [-2.0, 49.775474548339844, -10.0, 10],
+        "lump": {
+            "name": "hid-beach-plat-1",
+            "path": [
+                "vector4m",
+                [-2.0, 49.775474548339844, -10.0, 1.0],
+                [-2.0, 69.775474548339844, -10.0, 1.0]
+            ],
+            "sync": ["float", 6.0, 0.0],
+            "scale": ["float", 1.5],
+            "light-index": ["int32", 2]
+        }
+    },
+*/
+//Eco Platforms below
+/*
+    {
+        "trans": [34.0, 49.775474548339844, -30.0],
+        "etype": "plat-eco",
+        "game_task": 4,
+        "quat" : [0, 0, 0, 1],
+        "bsphere": [34.0, 49.775474548339844, -30.0, 10],
+        "lump": {
+            "name": "hid-beach-plat-eco-1",
+            "path": [
+                "vector4m",
+                [34.0, 49.775474548339844, -30.0, 1.0],
+                [4.0, 49.775474548339844, -30.0, 1.0]
+            ],
+            "sync": ["float", 6.0, 0.0],
+            "notice-dist": ["meters", 2.5],
+            "light-index": ["int32", 1]
+        }
+    },
+    {
+        "trans": [-2.0, 49.775474548339844, -30.0],
+        "etype": "plat-eco",
+        "game_task": 4,
+        "quat" : [0, 0, 0, 1],
+        "bsphere": [-2.0, 49.775474548339844, -30.0, 10],
+        "lump": {
+            "name": "hid-beach-plat-eco-2",
+            "path": [
+                "vector4m",
+                [-2.0, 49.775474548339844, -30.0, 1.0],
+                [-2.0, 0.775474548339844, -30.0, 1.0]
+            ],
+            "sync": ["float", 6.0, 0.0],
+            "notice-dist": ["meters", 2.5],
+            "light-index": ["int32", 1]
+        }
+    },
+*/
+//Launcher Platforms below
+/*
+    {
+        "trans": [10.000001907348633, 4.055624961853027, -20.0],
+        "etype": "launcher",
+        "game_task": 0,
+        "quat" : [0, 0, 0, 1],
+        "bsphere": [10.000001907348633, 4.055624961853027, -20.0, 10],
+        "lump": {
+            "name": "hid-beach-launcher-1",
+            "spring-height": ["meters", 50.0]
+        }
+    },
+*/
+//Wall Platforms below
+///*
+//*/
+////////////////
+// Swingpoles //
+////////////////
+//
+//Swingpoles below
+/*
+    {
+        "trans": [34.0, 10, -29.5],
+        "etype": "swingpole",
+        "game_task": 0,
+        "quat" : [0.707, 0, 0, -0.707],
+        "bsphere": [34.0, 10, -29.5, 10],
+        "lump": {
+            "name": "hid-beach-swingpole-1"
+        }
+    },
+    {
+        "trans": [34.0, 18, -29.5],
+        "etype": "swingpole",
+        "game_task": 0,
+        "quat" : [0.707, 0, 0, -0.707],
+        "bsphere": [34.0, 18, -29.5, 10],
+        "lump": {
+            "name": "hid-beach-swingpole-2"
+        }
+    },
+    {
+        "trans": [34.0, 26, -29.5],
+        "etype": "swingpole",
+        "game_task": 0,
+        "quat" : [0.707, 0, 0, -0.707],
+        "bsphere": [34.0, 26, -29.5, 10],
+        "lump": {
+            "name": "hid-beach-swingpole-3"
+        }
+    },
+    {
+        "trans": [34.0, 34, -29.5],
+        "etype": "swingpole",
+        "game_task": 0,
+        "quat" : [0.707, 0, 0, -0.707],
+        "bsphere": [34.0, 34, -29.5, 10],
+        "lump": {
+            "name": "hid-beach-swingpole-4"
+        }
+    },
+    {
+        "trans": [34.0, 42, -29.5],
+        "etype": "swingpole",
+        "game_task": 0,
+        "quat" : [0.707, 0, 0, -0.707],
+        "bsphere": [34.0, 42, -29.5, 10],
+        "lump": {
+            "name": "hid-beach-swingpole-5"
+        }
+    },
+*/
+//Springboxes below
+/*
+    {
+        "trans": [22.0, 40.0, -20.0],
+        "etype": "springbox",
+        "game_task": 0,
+        "quat" : [0, 0, 0, 1],
+        "bsphere": [22.0, 40.0, -20.0, 10],
+        "lump": {
+            "name": "hid-beach-springbox-1",
+            "scale": ["float", 1.0]
+        }
+    },
+*/
+////////////////
+// Race Rings //
+////////////////
+//
+//Race-Rings below
+///*
+//*/
+///////////
+// Doors //
+///////////
+//
+//Iris-Doors below
+///*
+//*/
+//Eco-Doors below
+/*
+    {
+        "trans": [226.0706787109375, 16.1601505279541, -0.09971955418586731],
+        "etype": "tra-iris-door",
+        "game_task": 0,
+        "quat" : [0, 0.707, 0, 0.707],
+        "bsphere": [226.0706787109375, 16.1601505279541, -0.09971955418586731, 10],
+        "lump": {
+            "name": "hid-beach-eco-door-1",
+            "scale-factor": ["float", 1.0],
+            "scale": ["float", 1.0],
+            "proximity": ["int32", 1],
+            "open-dist": ["meters", 5.0],
+            "close-dist": ["meters", 10.0],
+            "light-index": ["int32", 1]
+        }
+    },
+    {
+        "trans": [226.0706787109375, -106.84, -0.09971955418586731],
+        "etype": "tra-iris-door",
+        "game_task": 0,
+        "quat" : [0, 0.707, 0, 0.707],
+        "bsphere": [226.0706787109375, -106.84, -0.09971955418586731, 10],
+        "lump": {
+            "name": "hid-beach-eco-door-2",
+            "scale-factor": ["float", 1.0],
+            "scale": ["float", 1.0],
+            "proximity": ["int32", 1],
+            "open-dist": ["meters", 5.0],
+            "close-dist": ["meters", 10.0],
+            "light-index": ["int32", 1]
+        }
+    },
+*/
+////////////////////////
+// Breakable-Boulders //
+////////////////////////
+//
+//Breakable-Boulders below
+///*
+//*/
+///////////////////
+// WATER VOLUMES //
+///////////////////
+//
+//Water Animations
+      // look stuff:
+      // 0-12= sunken-water 
+      // 14=cave-water-2 
+      // 15=dark-eco-pool-9 
+      // 16==dark-eco-pool-6
+      // 17==dark-eco-pool-5
+      // 18=dark-eco-pool-8
+      // 19==dark-eco-pool-7
+      // 20=dark-eco-pool-10
+      // 32=dark-eco-pool-11 (misty)
+      // 33=ogre-lava-1
+      // 34=jungle-water-1 
+      // 35=villagec-water-1
+      // 36=training-water-1
+      // 37=cave-water-3
+      // 38-39=rolling-water
+      // 41=dark-eco-pool-12 (finalboss)
+      // 42=lavatube-lava-1
+      // 47=villageb-water-1
+//
+//Water Volumes below
+/*
+    {
+      "trans": [0, 0.0, 0],
+      "etype": "dark-eco-pool",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [0, 0.0, 0, 200.0],
+      "lump": {
+        "vol": ["vector-vol",
+            [1.0, 0.0, 0.0, 350],       // +x (+x side of cube in blender) 
+            [-1.0, 0.0, 0.0, 350],     // -x (-x side of cube in blender)                   (* -1)(because it's a negative face axis, NOT for opengoal conversion)
+            [0.0, 1.0, 0.0, 0.0],           // +y (+z side of cube in blender, because OpenGOAL)
+            [0.0, -1.0, 0.0, 10],        // -y (-z side of cube in blender, because OpenGOAL) (* -1)(because it's a negative face axis, NOT for opengoal conversion)
+            [0.0, 0.0, 1.0, 350],           // +z (-y side of cube in blender, because OpenGOAL) (* -1)(because it's a negative face axis, NOT for opengoal conversion)
+            [0.0, 0.0, -1.0, 350]       // -z (+y side of cube in blender, because OpenGOAL)
+          ],
+        "name": "Hid-beach-water-vol-1",
+        "water-height": ["water-height", 1.0, 0.5, 2.0, "(water-flags wt08 wt03 wt01)"],
+        "look": ["int32", 15],
+        "vis-dist":  ["meters", 200.0]
+      }
+    },
+*/
+    {
+      "trans": [0, 0.0, 0],
+      "etype": "water-anim",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [0, 0.0, 0, 200.0],
+      "lump": {
+        "vol": ["vector-vol",
+            [1.0, 0.0, 0.0, 1500],       // +x (+x side of cube in blender) 
+            [-1.0, 0.0, 0.0, 1500],     // -x (-x side of cube in blender)                   (* -1)(because it's a negative face axis, NOT for opengoal conversion)
+            [0.0, 1.0, 0.0, 0.0],           // +y (+z side of cube in blender, because OpenGOAL)
+            [0.0, -1.0, 0.0, 10],        // -y (-z side of cube in blender, because OpenGOAL) (* -1)(because it's a negative face axis, NOT for opengoal conversion)
+            [0.0, 0.0, 1.0, 1500],           // +z (-y side of cube in blender, because OpenGOAL) (* -1)(because it's a negative face axis, NOT for opengoal conversion)
+            [0.0, 0.0, -1.0, 1500]       // -z (+y side of cube in blender, because OpenGOAL)
+          ],
+        "name": "Hid-beach-water-vol-1",
+        "water-height": ["float",  4096.0, 2048.0, 8192.0, 1048588.0 ], // camera height (add ~ +1 to +z value [* 4096]), wade-height (currently 0.5 [*4096]), swim-depth (inverted (so -2 = 2) [* 4096]), flags
+        "look": ["int32", 36],
+        "vis-dist":  ["meters", 200.0]
+      }
+    }
+///////////////////////
+// BAD WATER VOLUMES //
+///////////////////////
+//
+/////////////
+// Enemies //
+/////////////
+//
+// Lurkerworms
+/*
+    {
+      "trans": [1.00, 0.00, -5.00],
+      "etype": "lurkerworm",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [1.00, 0.00, -5.00, 10],
+      "lump": {
+        "name":"hid-beach-lurkerworm-01",
+        "scale":["float", 1.5],
+        "vis-dist": ["meters", 200.00]
+      }
+    },
+    {
+      "trans": [13.00, 0.00, 5.00],
+      "etype": "lurkerworm",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [13.00, 0.00, 5.00, 10],
+      "lump": {
+        "name":"hid-beach-lurkerworm-02",
+        "scale":["float", 1.5],
+        "vis-dist": ["meters", 200.00]
+      }
+    },
+    {
+      "trans": [25.00, 0.00, 15.00],
+      "etype": "lurkerworm",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [25.00, 0.00, 15.00, 10],
+      "lump": {
+        "name":"hid-beach-lurkerworm-03",
+        "scale":["float", 1.5],
+        "vis-dist": ["meters", 200.00]
+      }
+    },
+*/
+// Lurker Puppies (as an example)
+/*
+    {
+      "trans": [20.00, 0.00, -20.00],
+      "etype": "lurkerpuppy",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [20.00, 0.00, -20.00, 10],
+      "lump": {
+        "name":"hid-beach-lurkerpuppy-01",
+        "vis-dist": ["meters", 200.00],       // distance enemy loads
+        "cam-notice-dist": ["meters", 10.0],  // distance ememy starts pursuit/attack
+        "idle-distance": ["meters", 80.0],    // distance when idle changes to casual movement
+        "cam-vert": ["meters", 8.0],
+        "cam-horz": ["meters", 20.0],
+        "path": ["vector3m",                  // path for casual movement
+            [ 0.00, 0.00, 0.00 ],             // start pos
+            [ 0.40, 0.00, 8.10 ],             // 1st point
+            [ 3.80, 0.00, 5.00 ],             // 2nd point
+            [ 0.00, 0.00, 0.00 ]              // finish loop at start
+          ],
+        "custom-nav": ["symbol", "hid-beach-lurkerpuppy"] // link to (external) custom nav mesh by name
+      }
+    },
+    {
+      "trans": [20.00, 0.00, -20.00],
+      "etype": "lurkerpuppy",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [20.00, 0.00, -20.00, 10],
+      "lump": {
+        "name":"hid-beach-lurkerpuppy-02",
+        "vis-dist": ["meters", 200.00],
+        "cam-notice-dist": ["meters", 10.0],
+        "idle-distance": ["meters", 80.0],
+        "cam-vert": ["meters", 8.0],
+        "cam-horz": ["meters", 20.0],
+        "path": ["vector3m",
+            [ 0.00, 0.00, 0.00 ],
+            [ 0.40, 0.00, 8.10 ],
+            [ 3.80, 0.00, 5.00 ],
+            [ 0.00, 0.00, 0.00 ]
+          ],
+        "nav-mesh-actor": "hid-beach-lurkerpuppy-01" // using custom nav mesh already linked to a previous actor
+      }
+    },
+*/
+// Babak Lurkers
+/*
+    {
+      "aid": 40004,//40000,
+      "trans": [13, 0, 25],
+      "etype": "babak",
+      "game_task": 0,
+      "quat": [ 0, 0, 0, 1 ],
+      "bsphere": [13, 0, 25, 10],
+      "lump": {
+        "name": "hid-beach-babak-01",
+        "vis-dist": [ "meters", 200.0 ],
+        "cam-notice-dist": [ "meters", 30.0 ],
+        "idle-distance": [ "meters", 50.0 ],
+        "cam-vert": [ "meters", 8.0 ],
+        "cam-horz": [ "meters", 20.0 ],
+        "path": [
+          "vector3m", // I am pretty sure game will crash if there is no path for an enemy. So just add one. You can use "path-actor" if you want to use another actor's path.
+          [ 0.0, 0.0, 25.0 ],
+          [ 13.0, 0.0, 28.0 ],
+          [ 26.0, 0.0, 25.0 ],
+          [ 13.0, 0.0, 22.0 ],
+          [ 0.0, 0.0, 25.0 ]
+        ]
+      }
+    },
+    {
+      "aid": 40001,
+      "trans": [1, 0, 15],
+      "etype": "babak",
+      "game_task": 0,
+      "quat": [ 0, 0, 0, 1 ],
+      "bsphere": [1, 0, 15, 10],
+      "lump": {
+        "name": "hid-beach-babak-02",
+        "vis-dist": [ "meters", 200.0 ],
+        "cam-notice-dist": [ "meters", 30.0 ],
+        "idle-distance": [ "meters", 50.0 ],
+        "cam-vert": [ "meters", 8.0 ],
+        "cam-horz": [ "meters", 20.0 ],
+        "path": [
+          "vector3m", // I am pretty sure game will crash if there is no path for an enemy. So just add one. You can use "path-actor" if you want to use another actor's path.
+          [ -12.0, 0.0, 15.0 ],
+          [ 1.0, 0.0, 18.0 ],
+          [ 14.0, 0.0, 15.0 ],
+          [ 1.0, 0.0, 12.0 ],
+          [ -12.0, 0.0, 15.0 ]
+        ]//,
+        //"nav-mesh-actor": "hid-beach-babak-01" // using custom nav mesh already linked to a previous actor
+        //"custom-nav": ["symbol", "hid-beach-babak-01"]
+      }
+    },
+    {
+      "aid": 40002,
+      "trans": [25, 0, -5],
+      "etype": "babak",
+      "game_task": 0,
+      "quat": [ 0, 0, 0, 1 ],
+      "bsphere": [25, 0, -5, 10],
+      "lump": {
+        "name": "hid-beach-babak-03",
+        "vis-dist": [ "meters", 200.0 ],
+        "cam-notice-dist": [ "meters", 30.0 ],
+        "idle-distance": [ "meters", 50.0 ],
+        "cam-vert": [ "meters", 8.0 ],
+        "cam-horz": [ "meters", 20.0 ],
+        "path": [
+          "vector3m", // I am pretty sure game will crash if there is no path for an enemy. So just add one. You can use "path-actor" if you want to use another actor's path.
+          [ 12.0, 0.0, -5.0 ],
+          [ 25.0, 0.0, -2.0 ],
+          [ 38.0, 0.0, -5.0 ],
+          [ 25.0, 0.0, -8.0 ],
+          [ 12.0, 0.0, -5.0 ]
+        ]//,
+        //"nav-mesh-actor": "hid-beach-babak-01" // using custom nav mesh already linked to a previous actor
+      }
+    },
+    {
+      "aid": 40003,
+      "trans": [-4.0, 65.80, 0.0],
+      "etype": "babak",
+      "game_task": 0,
+      "quat": [ 0, 0, 0, 1 ],
+      "bsphere": [-4.0, 65.80, 0.0, 10],
+      "lump": {
+        "name": "hid-beach-babak-04",
+        "vis-dist": [ "meters", 200.0 ],
+        "cam-notice-dist": [ "meters", 30.0 ],
+        "idle-distance": [ "meters", 50.0 ],
+        "cam-vert": [ "meters", 8.0 ],
+        "cam-horz": [ "meters", 20.0 ],
+        "path": [
+          "vector3m", // I am pretty sure game will crash if there is no path for an enemy. So just add one. You can use "path-actor" if you want to use another actor's path.
+          [ -12.0, 0.0, 15.0 ],
+          [ 1.0, 0.0, 18.0 ],
+          [ 14.0, 0.0, 15.0 ],
+          [ 1.0, 0.0, 12.0 ],
+          [ -12.0, 0.0, 15.0 ]
+        ]
+        //"nav-mesh-actor": "hid-beach-babak-01" // using custom nav mesh already linked to a previous actor
+      }
+    },
+*/
+// Testing Custom Nav-Mesh Generator -  holy shit it works!
+/*
+    {
+      "aid": 40001,
+      "trans": [-12.03, 1.04, 13.21],
+      "etype": "babak",
+      "game_task": 0,
+      "quat": [0, 0, 0, 1],
+      "bsphere": [-12.03, 1.04, 13.21, 10],
+      "lump": {
+        "name": "Lurker",
+        "vist-dist": ["meters", 200.0],
+        "cam-notice-dist": ["meters", 30.0],
+        "idle-distance": ["meters", 50.0],
+        "cam-vert": ["meters", 8.0],
+        "cam-horz": ["meters", 20.0],
+        "path": ["vector3m",
+          [-12.03, 1.04, 13.21],
+          [12.95, 1.16, 13.4],
+          [2.37, 1.16, 18.32],
+          [-12.03, 1.04, 13.21]
+          ],
+        "nav-mesh-sphere": ["vector4m",
+          [-9.94, 0.72, 16.02, 1.5],
+          [-7.23, 0.72, 17.14, 1.5],
+          [-5.11, 0.72, 18.82, 1.5],
+          [-3.8, 0.72, 21.8, 1.5]
+          ]
+      }
+    },
+*/
+/*
+// Lurkershark
+    {
+      "aid": 40010,
+      "trans": [70.0, 0.0, 20.0],
+      "etype": "sharkey",
+      "game_task": 0,
+      "quat": [ 0, 0, 0, 1 ],
+      "bsphere": [70.0, 0.0, 20.0, 10],
+      "lump": {
+        "name": "hid-beach-shakey-01",
+        "vis-dist": [ "meters", 400.0 ],
+        "cam-notice-dist": [ "meters", 30.0 ],
+        "idle-distance": [ "meters", 250.0 ],
+        "cam-vert": [ "meters", 10.0 ],
+        "cam-horz": [ "meters", 40.0 ],
+        "path": [
+          "vector3m", // I am pretty sure game will crash if there is no path for an enemy. So just add one. You can use "path-actor" if you want to use another actor's path.
+          [ 89.0, 0.0, 20.0 ],
+          [ 70.0, 0.0, 10.0 ],
+          [ 51.0, 0.0, 20.0 ],
+          [ 89.0, 0.0, 20.0 ]
+        ]
+        //"water-height": [0.0, 0.0, 0.0, 0.0]
+        //"nav-mesh-actor": "hid-beach-babak-01" // using custom nav mesh already linked to a previous actor
+      }
+    },
+    */
+////////////
+// Cannon //
+////////////
+/*
+    {
+      //"trans": [-65, 1.843, -45], // roundbeach lifeguard cannon
+      "trans": [12.5, 77.54, 0], // zeppelin cannon
+      "etype": "mistycannon",
+      "game_task": 0,
+      "quat" : [1, 0, 0, 1],
+      //"quat" : [0, 0.7164, 0, -0.6976],
+      //"bsphere": [-65, 1.843, -45, 25],
+      "bsphere": [12.5, 77.54, 0, 25],
+      "lump": {
+        "center-radius": 245760.0,// 60
+        "idle-distance": 2048000.0,// 500
+        "name": "hidbeachcannon-1",
+        "rotmax": 26396.4453125,// 6.44
+        "rotmin": 14563.5556640625,// 3.55
+        "tiltmax": 12743.111328125,// 3.11
+        "tiltmin": -1820.4444580078125,// 0.44
+        "vis-dist": 1146880.0// 280
+      }
+    }
+*/
+///////////////////////////////
+// Medium Resolution Levels: //
+///////////////////////////////
+//
+////////////////
+// VILLAGE 1: //
+////////////////
+//
+/*
+    {
+      "trans": [361.00201416015625, 0.0, -261.6180114746094, 0.000244140625],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [361.00201416015625, 0.0, -261.6180114746094, 213.07275390625],
+      "lump": {
+        "visvol": [
+           [864264.1875, -81920.0, -1685987.375, 1.0],
+           [2093064.25, 81920.0, -457187.3125, 1.0]
+          ],
+        "level": "'jungle",
+        "name": "med-res-level-1",
+        "vis-dist": 40960000.0
+      }
+    }
+*/
+/*
+// MedRes Level 1 - jungle
+    {
+      "aid": 5175,
+      "bsphere": [
+        361.00201416015625,
+        0.0,
+        -261.6180114746094,
+        213.07275390625
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "level": "'jungle",
+        "name": "med-res-level-1",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            864264.1875,
+            -81920.0,
+            -1685987.375,
+            1.0
+          ],
+          [
+            2093064.25,
+            81920.0,
+            -457187.3125,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        361.00201416015625,
+        0.0,
+        -261.6180114746094,
+        0.000244140625
+      ]
+    },
+// MedRes Level 2 - beach
+    {
+      "aid": 5176,
+      "bsphere": [
+        -158.625,
+        0.0,
+        -52.51599884033203,
+        213.07275390625
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "level": "'beach",
+        "name": "med-res-level-2",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -1264128.0,
+            -81920.0,
+            -829505.5625,
+            1.0
+          ],
+          [
+            -35328.0,
+            81920.0,
+            399294.46875,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        -158.625,
+        0.0,
+        -52.51599884033203,
+        0.000244140625
+      ]
+    },
+// MedRes Level 3 - misty-fog
+    {
+      "aid": 5177,
+      "bsphere": [
+        0.0,
+        0.0,
+        1000.0,
+        213.07275390625
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "art-name": "group-village1-misty-fog",
+        "level": "'misty",
+        "name": "med-res-level-3",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -614400.0,
+            -81920.0,
+            3481600.0,
+            1.0
+          ],
+          [
+            614400.0,
+            81920.0,
+            4710400.0,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.9238795042037964,
+        0.0,
+        0.3826834559440613
+      ],
+      "trans": [
+        0.0,
+        0.0,
+        1000.0,
+        0.000244140625
+      ]
+    },
+// MedRes Level 4 - village1
+    {
+      "aid": 13513,
+      "bsphere": [
+        0.0,
+        0.0,
+        0.0,
+        213.07275390625
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "index": 1,
+        "level": "'village1",
+        "name": "med-res-level-4",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -614400.0,
+            -81920.0,
+            -614400.0,
+            1.0
+          ],
+          [
+            614400.0,
+            81920.0,
+            614400.0,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        0.0,
+        0.0,
+        0.0,
+        0.000244140625
+      ]
+    },
+// MedRes Level 6 - beach
+    {
+      "aid": 13552,
+      "bsphere": [
+        -158.625,
+        0.0,
+        -52.51599884033203,
+        213.07275390625
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "index": 1,
+        "level": "'beach",
+        "name": "med-res-level-6",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -1264128.0,
+            -81920.0,
+            -829505.5625,
+            1.0
+          ],
+          [
+            -35328.0,
+            81920.0,
+            399294.46875,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        -158.625,
+        0.0,
+        -52.51599884033203,
+        0.000244140625
+      ]
+    },
+// MedRes Level 7 - beach
+    {
+      "aid": 13553,
+      "bsphere": [
+        -158.625,
+        0.0,
+        -52.51599884033203,
+        213.07275390625
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "index": 2,
+        "level": "'beach",
+        "name": "med-res-level-7",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -1264128.0,
+            -81920.0,
+            -829505.5625,
+            1.0
+          ],
+          [
+            -35328.0,
+            81920.0,
+            399294.46875,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        -158.625,
+        0.0,
+        -52.51599884033203,
+        0.000244140625
+      ]
+    },
+// MedRes Level 8 - jungle
+    {
+      "aid": 13554,
+      "bsphere": [
+        361.00201416015625,
+        0.0,
+        -261.6180114746094,
+        213.07275390625
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "index": 1,
+        "level": "'jungle",
+        "name": "med-res-level-8",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            864264.1875,
+            -81920.0,
+            -1685987.375,
+            1.0
+          ],
+          [
+            2093064.25,
+            81920.0,
+            -457187.3125,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        361.00201416015625,
+        0.0,
+        -261.6180114746094,
+        0.000244140625
+      ]
+    },
+// MedRes Level 9 - jungle
+    {
+      "aid": 13555,
+      "bsphere": [
+        361.00201416015625,
+        0.0,
+        -261.6180114746094,
+        213.07275390625
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "index": 2,
+        "level": "'jungle",
+        "name": "med-res-level-9",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            864264.1875,
+            -81920.0,
+            -1685987.375,
+            1.0
+          ],
+          [
+            2093064.25,
+            81920.0,
+            -457187.3125,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        361.00201416015625,
+        0.0,
+        -261.6180114746094,
+        0.000244140625
+      ]
+    },
+// MedRes Level 11 - village1-training-spouts
+    {
+      "aid": 20888,
+      "bsphere": [
+        -1200.0,
+        0.0,
+        1068.0,
+        213.07275390625
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "art-name": "group-village1-training-spouts",
+        "level": "'training",
+        "name": "med-res-level-11",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -5529600.0,
+            -81920.0,
+            3760128.0,
+            1.0
+          ],
+          [
+            -4300800.0,
+            81920.0,
+            4988928.0,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        -1200.0,
+        0.0,
+        1068.0,
+        0.000244140625
+      ]
+    },
+// MedRes Level 14 - beach
+    {
+      "aid": 20934,
+      "bsphere": [
+        -158.625,
+        0.0,
+        -52.51599884033203,
+        213.07275390625
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "index": 3,
+        "level": "'beach",
+        "name": "med-res-level-14",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -1264128.0,
+            -81920.0,
+            -829505.5625,
+            1.0
+          ],
+          [
+            -35328.0,
+            81920.0,
+            399294.46875,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        -158.625,
+        0.0,
+        -52.51599884033203,
+        0.000244140625
+      ]
+    },
+// MedRes Level 22 - village1
+    {
+      "aid": 23431,
+      "bsphere": [
+        0.0,
+        0.0,
+        0.0,
+        213.07275390625
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "index": 2,
+        "level": "'village1",
+        "name": "med-res-level-22",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -614400.0,
+            -81920.0,
+            -614400.0,
+            1.0
+          ],
+          [
+            614400.0,
+            81920.0,
+            614400.0,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        0.0,
+        0.0,
+        0.0,
+        0.000244140625
+      ]
+    },
+// MedRes Level 23 - village1
+    {
+      "aid": 23432,
+      "bsphere": [
+        0.0,
+        0.0,
+        0.0,
+        213.07275390625
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "index": 3,
+        "level": "'village1",
+        "name": "med-res-level-23",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -614400.0,
+            -81920.0,
+            -614400.0,
+            1.0
+          ],
+          [
+            614400.0,
+            81920.0,
+            614400.0,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        0.0,
+        0.0,
+        0.0,
+        0.000244140625
+      ]
+    },
+*/
+//
+////////////////
+// VILLAGE 2: //
+////////////////
+//
+/*
+// MedRes Level 12 - rolling
+    {
+      "aid": 20932,
+      "bsphere": [
+        -170.0,
+        110.0,
+        -1560.0,
+        173.205078125
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "level": "'rolling",
+        "name": "med-res-level-12",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -1105920.0,
+            40960.0,
+            -6799360.0,
+            1.0
+          ],
+          [
+            -286720.0,
+            860160.0,
+            -5980160.0,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        350.0,
+        0.0,
+        -1630.0,
+        0.000244140625
+      ]
+    },
+// MedRes Level 13 - rolling
+    {
+      "aid": 20933,
+      "bsphere": [
+        80.0,
+        30.0,
+        -1630.0,
+        113.57816314697266
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "index": 1,
+        "level": "'rolling",
+        "name": "med-res-level-13",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            0.0,
+            -204800.0,
+            -6717440.0,
+            1.0
+          ],
+          [
+            655360.0,
+            450560.0,
+            -6635520.0,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        350.0,
+        0.0,
+        -1630.0,
+        0.000244140625
+      ]
+    },
+// MedRes Level 15 - village2
+    {
+      "aid": 21152,
+      "bsphere": [
+        290.0,
+        60.0,
+        -1675.0,
+        138.38352966308594
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "level": "'village2",
+        "name": "med-res-level-15",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            819200.0,
+            -143360.0,
+            -7045120.0,
+            1.0
+          ],
+          [
+            1556480.0,
+            634880.0,
+            -6676480.0,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        350.0,
+        0.0,
+        -1630.0,
+        0.000244140625
+      ]
+    },
+*/
+//
+////////////////
+// VILLAGE 3: //
+////////////////
+//
+/*
+// MedRes Level 17 - ogre
+    {
+      "aid": 22126,
+      "bsphere": [
+        350.0,
+        0.0,
+        -2500.0,
+        1247.0765380859375
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "level": "'ogre",
+        "name": "med-res-level-17",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -1515520.0,
+            -2949120.0,
+            -13189120.0,
+            1.0
+          ],
+          [
+            4382720.0,
+            2949120.0,
+            -7290880.0,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        350.0,
+        0.0,
+        -1630.0,
+        0.000244140625
+      ]
+    },
+// MedRes Level 18 - finalboss
+    {
+      "aid": 22127,
+      "bsphere": [
+        2874.48486328125,
+        120.0,
+        -4862.7900390625,
+        814.0639038085938
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "level": "'finalboss",
+        "name": "med-res-level-18",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            9848770.0,
+            -1433600.0,
+            -21843108.0,
+            1.0
+          ],
+          [
+            13699010.0,
+            2416640.0,
+            -17992868.0,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        2794.48486328125,
+        0.0,
+        -4712.7900390625,
+        0.000244140625
+      ]
+    },
+// MedRes Level 20 - ogre
+    {
+      "aid": 23393,
+      "bsphere": [
+        350.0,
+        0.0,
+        -2500.0,
+        1247.0765380859375
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "index": 2,
+        "level": "'ogre",
+        "name": "med-res-level-20",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -1515520.0,
+            -2949120.0,
+            -13189120.0,
+            1.0
+          ],
+          [
+            4382720.0,
+            2949120.0,
+            -7290880.0,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        350.0,
+        0.0,
+        -1630.0,
+        0.000244140625
+      ]
+    },
+// MedRes Level 21 - ogre
+    {
+      "aid": 23394,
+      "bsphere": [
+        350.0,
+        0.0,
+        -2500.0,
+        1247.0765380859375
+      ],
+      "etype": "med-res-level",
+      "game_task": 0,
+      "lump": {
+        "index": 3,
+        "level": "'ogre",
+        "name": "med-res-level-21",
+        "vis-dist": 40960000.0,
+        "visvol": [
+          [
+            -1515520.0,
+            -2949120.0,
+            -13189120.0,
+            1.0
+          ],
+          [
+            4382720.0,
+            2949120.0,
+            -7290880.0,
+            1.0
+          ]
+        ]
+      },
+      "quat": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "trans": [
+        350.0,
+        0.0,
+        -1630.0,
+        0.000244140625
+      ]
+    }
+*/
+  ]
+}

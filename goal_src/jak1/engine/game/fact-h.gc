@@ -56,7 +56,12 @@
   (fuel-cell)
   (eco-pill)
   (buzzer)
-  (eco-pill-random))
+  (eco-pill-random)
+  ;; EBR note: added custom eco types
+  (eco-darkk)
+  (eco-whyte)
+  (eco-lightt)
+)
 
 (defun pickup-type->string ((arg0 pickup-type))
   (enum->string pickup-type arg0))

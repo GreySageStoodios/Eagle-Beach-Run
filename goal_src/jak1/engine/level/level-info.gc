@@ -2526,3 +2526,174 @@
        :wait-for-load #t))
 
 (cons! *level-load-list* 'test-zone)
+
+;; EBR note: added custom levels
+
+;;;;;;;;;;;;;;;;;;;;
+;; Custom Levels: ;;
+;;;;;;;;;;;;;;;;;;;;
+
+;; BASE ID - INDEX # - LEVEL LIST:
+
+#|
+               1         training
+               2         village1
+               3         beach
+               4         jungle
+               5         jungleb
+               6         misty
+               7         firecanyon
+               8         village2
+               9         sunken
+               10        sunkenb
+               11        swamp
+               12        rolling
+               13        ogre
+               14        village3
+               15        snow
+               16        maincave
+               17        darkcave
+               18        robocave
+               19        lavatube
+               20        citadel
+               21        finalboss
+               22        intro
+               23        demo
+               24        title
+               25        halfpipe
+               26        default-level
+|#
+
+;; BASE ID - INDEX # -  NICK  -   LEVEL LIST:
+;;	10000 -	26	 -   tsz  -    test-zone
+
+;;	1000	 -	24	 -   hdb  -	hid-beach
+
+;;	400	 -	25	 -   clc  -	cliff-cove
+
+;;	401	 -	26	 -   stv  -	stilt-vill
+;;	402	 -	27	 -   pcr  -	pre-ruins
+;;	403	 -	28	 -   svn  -	savan-nah
+;;	404	 -	29	 -   cuf  -	cave-ufalls
+
+;;	501	 -	31	 -   ugv  -	undg-vill
+;;	502	 -	32	 -   pcf  -	pre-found
+;;	503	 -	33	 -   ugf  -	undg-forest
+;;	504	 -	34	 -   nci  -	new-citadel
+;;	505	 -	35	 -   nfb  -	new-finalboss
+
+;;	1001	 -	40	 -   bkg  -	bkg-level
+;;	1002	 -	41	 -   egb  -	egl-beach
+
+;;	100	 -	50	 -   ntr  -	new-training
+
+;;	101	 -	51	 -   nv1  -	new-vill1
+;;	102	 -	52	 -   nbe  -	new-beach
+;;	103	 -	53	 -   nju  -	new-jungle
+;;	104	 -	54	 -   njb  -	new-jungleb
+;;	105	 -	55	 -   nmi  -	new-misty
+
+;;	106	 -	56	 -   jgb  -	jng-beach
+
+;;	200	 -	60	 -   nfc  -	new-firecanyon
+
+;;	201	 -	61	 -   nv2  -	new-vill2
+;;	202	 -	62	 -   nsu  -	new-sunken
+;;	203	 -	63	 -   nsb  -	new-sunkenb
+;;	204	 -	64	 -   nsw  -	new-swamp
+;;	205	 -	65	 -   nro  -	new-rolling
+
+;;	206	 -	66	 -   skb  -	shrek-beach
+
+;;	300	 -	70	 -   nog  -	new-ogre
+
+;;	301	 -	71	 -   nv3  -	new-vill3
+;;	302	 -	72	 -   nsn  -	new-snow
+;;	303	 -	73	 -   nmc  -	new-maincave
+;;	304	 -	74	 -   ndc  -	new-darkcave
+;;	305	 -	75	 -   nrc  -	new-robocave
+
+;;	306	 -	76	 -   nsi  -	new-sierras
+;;	307	 -	77	 -   lvm  -	lava-mines
+;;	308	 -	78	 -   nfo  -	new-foyer
+
+;;	500	 -	80	 -   nlt  -	new-lavatube
+
+
+;;   600   -   90    -   str  -    stilt-river
+
+;;	601	 -	91	 -   ptp  -	petra-plat
+;;		 -	92	 -        -	
+;;		 -	93	 -        -	
+;;		 -	94	 -        -	
+
+;;;;;;;;; CUSTOM LEVELS - Testing
+;; (:index 24) ;; same as "title"
+(define hid-beach (new 'static 'level-load-info
+                           :index 24 ;; EBR note: same index # as "title" above, but works for kuitar
+                           ;; needs to match "level-task-data-remap" order exactly in "prgress-static.gc"
+                           :name 'hid-beach
+                           ;;:customname "Hidden Beach" ;; EBR note: custom type for the portal name
+                           ;;:custom-orb-count 28
+                           ;;:custom-buzzer-count 7
+                           :visname 'hid-beach-vis ;; name + -vis
+                           :nickname 'hdb ;; nickname
+                           :packages '()
+                           :sound-banks '()
+                           :music-bank #f
+                           :ambient-sounds '()
+                           :mood '*finalboss-mood*
+                           :mood-func 'update-mood-finalboss
+                           :ocean '*ocean-map-village2*
+                           :sky #t
+                           :sun-fade 1.0
+                           :continues '(
+                                            (new 'static 'continue-point
+                                             :name "hid-beach-start"
+                                             :level 'hid-beach
+                                             :trans (new 'static 'vector :x (meters -30.00) :y (meters 5.50) :z (meters 30.00) :w 1.0)
+                                             :quat (new 'static 'quaternion  :x 0.0 :y -0.0 :z 0.866 :w 0.5)
+                                             :camera-trans (new 'static 'vector :x 0.0 :y 4096.0 :z 0.0 :w 1.0)
+                                             :camera-rot (new 'static 'array float 9 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0)
+                                             :load-commands '()
+                                             :vis-nick 'hdb
+                                             :lev0 'hid-beach
+                                             :disp0 'display
+                                             :lev1 #f
+                                             :disp1 #f
+                                             )
+                                            (new 'static 'continue-point
+                                              :name "hid-beach-warp"
+                                              :level 'hid-beach
+                                              :flags (continue-flags warp)
+                                              :trans (new 'static 'vector :x (meters -16.8203) :y (meters 5.50) :z (meters 22.9819) :w 1.0)
+                                              :quat (new 'static 'quaternion  :x 0.0 :y 0.991444 :z 0.0 :w 0.130526)
+                                              :camera-trans (new 'static 'vector :x 0.0 :y 4096.0 :z 0.0 :w 1.0)
+                                              :camera-rot (new 'static 'array float 9 -0.0134 -0.0000 0.9999 -0.1257 0.9920 -0.0016 -0.9919 -0.1257 -0.0133)
+                                              :load-commands '()
+                                              :vis-nick 'hdb
+                                              :lev0 'hid-beach
+                                              :disp0 'display
+                                              :lev1 #f
+                                              :disp1 #f
+                                              )
+                                          )
+                           :tasks '()
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           ;; EBR note: bsphere - xyz is the center of the level, w is the radius
+                           ;; think its needed to fade moods and sky between levels and to grab relevant level continue/load points 
+                           :bsphere (new 'static 'sphere :x 0.0 :y 0.0 :z 0.0 :w 40960000.0);;:w 167772160000.0)
+                           :bottom-height (meters -130)
+                           :run-packages '()
+                           :wait-for-load #t
+                           )
+        )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Custom Levels in Load List ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Testing
+(cons! *level-load-list* 'hid-beach)

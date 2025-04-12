@@ -218,6 +218,8 @@
 ;; entity inspection
 ;;;;;;;;;;;;;;;;;;;;;;
 
+;; EBR note: commented this out
+#|
 (defmethod inspect ((this entity))
   (call-parent-method this)
   (format #t "~Ttrans: ~`vector`P~%" (-> this trans))
@@ -232,7 +234,7 @@
   (format #t "~Tvis-id:   ~d~%" (-> this vis-id-signed))
   (format #t "~Tquat:     ~`vector`P~%" (-> this quat))
   this)
-
+|#
 (defun-debug process-status-bits ((arg0 process) (arg1 symbol))
   "Print to arg1 three characters representing the status of a process
    The first is an r, if we should run.
@@ -1059,6 +1061,9 @@
   (set! (-> arg0 root trans quad) (-> arg1 extra trans quad))
   (quaternion-copy! (-> arg0 root quat) (-> arg1 quat))
   (vector-identity! (-> arg0 root scale))
+  (let ((scale (res-lump-float (-> arg0 entity) 'scale :default 1.0))) ;; EBR note: added a scale option for every process-drawable in the lump
+    (set-vector! (-> arg0 root scale) scale scale scale 1.0)
+    )
   (none))
 
 (defmethod update-perm! ((this entity-perm) (arg0 symbol) (arg1 entity-perm-status))
