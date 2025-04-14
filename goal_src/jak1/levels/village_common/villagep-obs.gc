@@ -1,11 +1,14 @@
 ;;-*-Lisp-*-
 (in-package goal)
+;;EBR note: commmented these out to match kuitar
+#|
 (bundles "CIT.DGO" "VI1.DGO" "VI2.DGO" "VI3.DGO")
 (require "engine/entity/ambient.gc")
 (require "engine/game/task/task-control.gc")
 (require "engine/target/target.gc")
 (require "engine/camera/pov-camera-h.gc")
 (require "engine/common-obs/basebutton.gc")
+|#
 
 ;; DECOMP BEGINS
 
@@ -95,7 +98,10 @@
                        (else #t))
                      (time-elapsed? (-> self state-time) (seconds 0.1)))
             (if (and (cpad-pressed? 0 circle) (process-grab? *target*)) (go-virtual active))
-            (if (and *cheat-mode* (cpad-pressed? 0 l3)) (set! (-> self max-slot) 4))
+            (if (and *cheat-mode* (cpad-pressed? 0 l3)) ;;(set! (-> self max-slot) 4))
+                ;; EBR note: Changing the max slot of warp gate to use the lenght of the array (default: 4)
+                (set! (-> self max-slot) (- (-> *warp-info* length) 1))
+                )
             (let ((gp-0 (new 'stack 'font-context *font-default-matrix* 32 160 0.0 (font-color default) (font-flags shadow kerning))))
               (let ((v1-53 gp-0)) (set! (-> v1-53 width) (the float 440)))
               (let ((v1-54 gp-0)) (set! (-> v1-54 height) (the float 80)))
@@ -118,17 +124,96 @@
     (if (< v0-0 (-> arg0 min-slot)) (set! v0-0 (-> arg0 max-slot)))
     v0-0))
 
+;;EBR note: added WarpLevelString
+(define WarpLevelString "Placeholder for upcase method")
+
+;; EBR note: Return #t if the first entries in *warp-info* are in the expected state
+(defun vanilla-warp-info? ()
+(if (not (string= (-> *warp-info* 0) "training-warp"))
+(return #f)
+)
+(if (not (string= (-> *warp-info* 1) "village1-warp"))
+(return #f)
+)
+(if (not (string= (-> *warp-info* 2) "village2-warp"))
+(return #f)
+)
+(if (not (string= (-> *warp-info* 3) "village3-warp"))
+(return #f)
+)
+(if (not (string= (-> *warp-info* 4) "citadel-warp"))
+(return #f)
+)
+(if (not (string= (-> *warp-info* 5) "hid-beach-warp"))
+(return #f)
+)
+
+#t)
+
+;; EBR note: lot of changes to get custom names to work in warp gates
+
 (defun print-level-name ((arg0 int) (arg1 font-context) (arg2 int) (arg3 int))
   (let ((s5-0 (if arg3 arg2 (- arg2))))
     (+! (-> arg1 origin x) (the float s5-0))
     (let ((f30-0 (- 1.0 (* 0.0033333334 (the float arg2)))))
+    ;;if not <4  and in the vanilla level order (Default levels do this!)
+    (if (and (vanilla-warp-info?) (< arg0 5) )
+    (begin
       (print-game-text-scaled (lookup-text! *common-text* (the-as text-id (+ arg0 286)) #f)
                               f30-0
                               arg1
                               (the int (* 128.0 f30-0))))
+    ;;if <4 (Its a custom level! sick lets see if it has a customname)
+    (begin
+    (if  (!= (-> (lookup-level-info (-> (get-continue-by-name *game-info* (-> *warp-info* (- arg0 0))) level)) customname) 0)
+    ;;It has a custom name cool! lets use that as the text in the warp menu!
+    (begin
+        (string-upcase  (-> (lookup-level-info (-> (get-continue-by-name *game-info* (-> *warp-info* (- arg0 0))) level)) customname) (the-as string WarpLevelString))
+        (print-game-text-scaled
+        WarpLevelString
+        f30-0
+        arg1
+        (the int (* 128.0 f30-0))))
+        )
+    ;;It doesnt have a custom name :( lets default to the level code name VILLAGE1 ETC)
+    (if  (= (-> (lookup-level-info (-> (get-continue-by-name *game-info* (-> *warp-info* (- arg0 0))) level)) customname) 0)
+    (begin
+        (string-upcase  (symbol->string (-> (lookup-level-info (-> (get-continue-by-name *game-info* (-> *warp-info* (- arg0 0))) level)) name)) (the-as string WarpLevelString))
+        (print-game-text-scaled
+        WarpLevelString
+        f30-0
+        arg1
+        (the int (* 128.0 f30-0))))))
+        )
+
+        (if (not (vanilla-warp-info?))
+    
+    ;;if <4 and the first entries are not in the default expeceted order (Its a custom level! sick lets see if it has a customname)
+    (begin
+    (if  (!= (-> (lookup-level-info (-> (get-continue-by-name *game-info* (-> *warp-info* (- arg0 0))) level)) customname) 0)
+    ;;It has a custom name cool! lets use that as the text in the warp menu!
+    (begin
+        (string-upcase  (-> (lookup-level-info (-> (get-continue-by-name *game-info* (-> *warp-info* (- arg0 0))) level)) customname) (the-as string WarpLevelString))
+        (print-game-text-scaled
+        WarpLevelString
+        f30-0
+        arg1
+        (the int (* 128.0 f30-0))))
+        )
+    ;;It doesnt have a custom name :( lets default to the level code name VILLAGE1 ETC)
+    (if  (= (-> (lookup-level-info (-> (get-continue-by-name *game-info* (-> *warp-info* (- arg0 0))) level)) customname) 0)
+    (begin
+        (string-upcase  (symbol->string (-> (lookup-level-info (-> (get-continue-by-name *game-info* (-> *warp-info* (- arg0 0))) level)) name)) (the-as string WarpLevelString))
+        (print-game-text-scaled
+        WarpLevelString
+        f30-0
+        arg1
+        (the int (* 128.0 f30-0))))))
+        )
     (set! (-> arg1 origin x) (- (-> arg1 origin x) (the float s5-0))))
   (set! (-> arg1 color) (font-color default))
   arg1)
+)
 
 (defstate active (warp-gate)
   :virtual #t
@@ -249,20 +334,27 @@
   (set! (-> self level) (-> self entity extra level name))
   (set! (-> self min-slot) 0)
   (let ((v1-11 (-> self level)))
+  ;; EBR note: CHECK SELF LEVEL TO NOT DISPLAY IT IN THE MENU, ADD NEW LEVELS AND MAKE SURE OF THE ORDER:
     (set! (-> self level-slot)
           (cond
             ((= v1-11 'training) 0)
             ((= v1-11 'village1) 1)
-            ((= v1-11 'village2) 2)
-            ((= v1-11 'village3) 3)
-            ((or (= v1-11 'citadel) (= v1-11 'lavatube)) 4)
-            (else -1))))
+            ;; added for warpgate in hid-beach level
+            ((= v1-11 'hid-beach) 2)
+            ((= v1-11 'village2) 3)
+            ((= v1-11 'village3) 4)
+            ((or (= v1-11 'citadel) (= v1-11 'lavatube)) 5)
+            (else -1)))
+          ;; EBR note: added for custom level
+          (format 0 "SELF LEVEL-SLOT: ~D~%" (-> self level-slot))
+            )
+  ;; EBR note: CHECK WHICH TASK HAS BEEN CLOSED TO UNLOCK X SLOTS IN THE PORTAL MENU
   (set! (-> self max-slot)
         (cond
-          ((task-closed? (game-task village4-button) (task-status need-hint)) 4)
-          ((task-closed? (game-task village3-button) (task-status need-hint)) 3)
-          ((task-closed? (game-task village2-levitator) (task-status need-hint)) 2)
-          (else 1)))
+          ((task-closed? (game-task village4-button) (task-status need-hint)) 5)
+          ((task-closed? (game-task village3-button) (task-status need-hint)) 4)
+          ((task-closed? (game-task village2-levitator) (task-status need-hint)) 3)
+          (else 2)))
   (go-virtual idle)
   (none))
 

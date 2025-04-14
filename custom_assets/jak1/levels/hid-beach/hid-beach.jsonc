@@ -23,7 +23,7 @@
     /////////////////////
     //
     //"bounceytarp-ag", // springbox//
-    "orb-cache-top-ag" // orb cache top
+    "orb-cache-top-ag", // orb cache top
     //"plat-ag", // platform//
     //"plat-eco-ag" // blue eco platform//
     //"wall-plat-ag", // wall platform
@@ -31,21 +31,22 @@
     // Warp Gate //
     ///////////////
     //
-    //"warp-gate-switch-ag", // warpgate switch//
+    "warp-gate-switch-ag", // warpgate switch
     ///////////
     // Doors //
     ///////////
     //
-    //"sun-iris-door-ag", // iris door - sunken level//
-    //"jng-iris-door-ag", // eco door - geyser level//
+    "sun-iris-door-ag", // iris door - sunken level//
+    "jng-iris-door-ag", // eco door - geyser level//
     //"maindoor-ag",
     //"launcherdoor-ag",
+    "harvester-ag", // eco harvester
+    //"ecoventrock-ag", // ecovent rock
     ///////////////////////
     // Breakable Boulder //
     ///////////////////////
     //
-    //"shortcut-boulder-ag", // ogre breakable rock
-    //"dark-crystal-ag", // ogre breakable rock?
+    "shortcut-boulder-ag" // ogre breakable rock
     /////////////
     // Enemies //
     /////////////
@@ -137,34 +138,34 @@
 //////////////
 //
 //Warpgates below
-/*
+///*
     {
-      "trans": [-17.3203, 5.0, 25.9819], // translation
+      "trans": [-17.3203, 8.37066, 25.9819], // translation
       "etype": "warpgate",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [-17.3203, 5.0, 25.9819, 10], // bounding sphere
+      "bsphere": [-17.3203, 8.37066, 25.9819, 10], // bounding sphere
       "lump": {
         "name":"hid-beach-warpgate-01"
       }
     },
     {
-      "trans": [-10.677, 1.79961, 26.124], 
+      "trans": [-10.204, 5.5, 28.1843], 
       "etype": "warp-gate-switch",
       "game_task": 0,//123 (hid-beach-button)
-      "quat" : [0.023153, 0.001519, -0.043499, 0.998784],
-      "bsphere": [-10.677, 1.79961, 26.124, 10],
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [-10.204, 5.5, 28.1843, 10],
       "lump": {
         "name": "hid-beach-warp-gate-switch",
     "alt-actor": "hid-beach-warpgate-part-1"
       }
     },
     {
-      "trans": [-17.3203, 5.0, 25.9819], 
+      "trans": [-17.3203, 8.37066, 25.9819], 
       "etype": "hidbeach-part",
       "game_task": 0,
-      "quat" : [0.0, 0.0, 0.0, 1],
-      "bsphere": [-17.3203, 5.0, 25.9819, 10],
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [-17.3203, 8.37066, 25.9819, 10],
       "lump": {
         "name": "hid-beach-warpgate-part-1",
     "effect-name": "'warpgate-loop",
@@ -174,7 +175,7 @@
         "rot": ["float", -1.0000, -1.0000,-1.0]
       }
     },
-*/
+//*/
   //{
   //  "trans": [-48.0, 5.0, 28.0], // translation
   //  "etype": "hidbeach-part",  // actor type
@@ -924,13 +925,13 @@
 ///*
 //*/
 //Eco-Doors below
-/*
+///*
     {
-        "trans": [226.0706787109375, 16.1601505279541, -0.09971955418586731],
+        "trans": [-8.79387, 7.23936, 14.4596],
         "etype": "tra-iris-door",
         "game_task": 0,
         "quat" : [0, 0.707, 0, 0.707],
-        "bsphere": [226.0706787109375, 16.1601505279541, -0.09971955418586731, 10],
+        "bsphere": [-8.79387, 7.23936, 14.4596, 10],
         "lump": {
             "name": "hid-beach-eco-door-1",
             "scale-factor": ["float", 1.0],
@@ -941,6 +942,7 @@
             "light-index": ["int32", 1]
         }
     },
+/*
     {
         "trans": [226.0706787109375, -106.84, -0.09971955418586731],
         "etype": "tra-iris-door",
@@ -958,12 +960,55 @@
         }
     },
 */
+////////////////
+// Harvesters //
+////////////////
+/*
+    {
+      "trans": [4.00, 5.50, 30.00],
+      "etype": "harvester",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [4.00, 5.50, 30.00, 10],
+      "lump": {
+          "name": "hid-beach-harvester-1"
+      }
+  },
+*/
+//////////////////
+// Ecoventrocks //
+//////////////////
+/*
+  {
+    "trans": [4.00, 6.00, 30.00],
+    "etype": "ecoventrock",
+    "game_task": 0,
+    "quat" : [0, 0, 0, 1],
+    "bsphere": [4.00, 5.00, 30.00, 10],
+    "lump": {
+        "name": "hid-beach-ecoventrock-1"
+    }
+  },
+*/
 ////////////////////////
 // Breakable-Boulders //
 ////////////////////////
 //
 //Breakable-Boulders below
 ///*
+    {
+      "trans": [-2.0, 5.00, 130.0],
+      "etype": "hidbeach-boulder",
+      "game_task": 0,
+      "quat": [0, 0, 0, 1],
+      "bsphere": [-2.0, 5.00, 130.0, 10],
+      "lump": {
+          "name": "hid-beach-boulder-1",
+          "scale": ["float", 1.0],
+          "vis-dist": ["meters", 200.0],
+          "light-index": ["int32", 4]
+      }
+    },
 //*/
 ///////////////////
 // WATER VOLUMES //

@@ -418,7 +418,8 @@
             ((and s3-3 (= (-> s3-3 formatted) 1) (= (-> s3-3 inited) 1) (= (-> s3-3 file s1-0 present) 1))
              (set! (-> this particles s2-0 init-pos x) (the float (- 66 (-> this left-x-offset))))
              (let ((v1-57 arg0)) (set! (-> v1-57 scale) 0.6))
-             (if (and (< (-> s3-3 file s1-0 level-index) (length *level-task-data-remap*)) (> (-> s3-3 file s1-0 level-index) 0))
+             ;; EBR note: changed this less to less equal
+             (if (and (<= (-> s3-3 file s1-0 level-index) (length *level-task-data-remap*)) (> (-> s3-3 file s1-0 level-index) 0))
                (print-game-text (lookup-text! *common-text*
                                               (-> *level-task-data* (-> *level-task-data-remap* (+ (-> s3-3 file s1-0 level-index) -1)) level-name-id)
                                               #f)

@@ -119,7 +119,12 @@
    (run-packages      pair)
    (prev-level        basic)
    (next-level        basic)
-   (wait-for-load     symbol)))
+   (wait-for-load     symbol)
+   ;; EBR note: Added these 3 types for custom name in portal, orb count and buzzer count in custom levels
+   (customname        string )
+   (custom-orb-count  int)
+   (custom-buzzer-count int)
+   ))
 
 ;; The levels are initialized (called "login") over multiple frames.
 ;; The state of this process is stored in a login-state.

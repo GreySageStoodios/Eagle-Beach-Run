@@ -13,6 +13,8 @@
        'level-load-info
        :index 1
        :name 'training
+       ;; EBR note: custom type for the portal name
+       :customname "GEYSER ROCK"
        :visname 'training-vis
        :nickname 'tra
        :packages '(training)
@@ -133,6 +135,8 @@
        'level-load-info
        :index 2
        :name 'village1
+       ;; EBR note: custom type for the portal name
+       :customname "GREEN SAGE\c12S HUT"
        :visname 'village1-vis
        :nickname 'vi1
        :packages '(village1)
@@ -689,6 +693,8 @@
        'level-load-info
        :index 8
        :name 'village2
+       ;; EBR note: custom type for the portal name
+       :customname "BLUE SAGE\c12S HUT"
        :visname 'village2-vis
        :nickname 'vi2
        :packages '(village2)
@@ -1304,6 +1310,8 @@
        'level-load-info
        :index 14
        :name 'village3
+       ;; EBR note: custom type for the portal name
+       :customname "RED SAGE\c12S HUT"
        :visname 'village3-vis
        :nickname 'vi3
        :packages '(village3)
@@ -1922,6 +1930,8 @@
        'level-load-info
        :index 20
        :name 'citadel
+       ;; EBR note: custom type for the portal name
+       :customname "GOL AND MAIA\c12S CITADEL"
        :visname 'citadel-vis
        :nickname 'cit
        :packages '(citadel)
@@ -2633,9 +2643,10 @@
                            :index 24 ;; EBR note: same index # as "title" above, but works for kuitar
                            ;; needs to match "level-task-data-remap" order exactly in "prgress-static.gc"
                            :name 'hid-beach
-                           ;;:customname "Hidden Beach" ;; EBR note: custom type for the portal name
-                           ;;:custom-orb-count 28
-                           ;;:custom-buzzer-count 7
+                           ;; EBR note: custom type for the portal name
+                           :customname "HIDDEN BEACH"
+                           :custom-orb-count 28
+                           :custom-buzzer-count 7
                            :visname 'hid-beach-vis ;; name + -vis
                            :nickname 'hdb ;; nickname
                            :packages '()
