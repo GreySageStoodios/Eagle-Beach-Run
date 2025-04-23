@@ -655,6 +655,17 @@
   (scene-player #x10c1)
   (play-credits #x10c2)
   (scrapbook #x10c3)
+  ;; EBR note: CUSTOM LEVEL TEXTS
+  ;;
+  ;; HID-BEACH
+  (hid-beach-findcell           #x10c4);; tasks ; use these # for associated game_custom_text entries
+  (hid-beach-crate              #x10c5)
+  (hid-beach-woods              #x10c6)
+  (hid-beach-cave               #x10c7)
+  (hid-beach-summit             #x10c8)
+  (hid-beach-buzzer             #x10c9)
+  (hid-beach-level              #xa01);; level name CHANGED ID TO SEE THE LEVEL ONLY ONCE IN THE POPUP (<4096) xa00 and up seems to be free
+  ;; Custom Hints would go here
   (default #x10d0)
   (flava-vi1-unused0 #x10d1)
   (flava-sage #x10d2)

@@ -75,6 +75,7 @@
 ;; Custom group-part-vent-"color"-inactive area ;;        
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
+#|
 (defpartgroup group-eco-darkk;;this is for a jak II looking dark eco cloud
   ;; EBR note: jak 1 uses id # up to and including 708
   :id 710
@@ -91,6 +92,7 @@
     (sp-item 3002 :flags (start-dead launch-asap) :binding 3003)
     (sp-item 3002 :flags (start-dead launch-asap) :binding 3003)
     (sp-item 3002 :flags (start-dead launch-asap) :binding 3003);; I think this starts the 1st small blob movement and binds it to 2nd.
+|#
 #|
     ;; commented out to remove "dripping" particles
     (sp-item 3003 :fade-after (meters 100) :flags (start-dead launch-asap) :binding 3004)
@@ -102,8 +104,10 @@
     (sp-item 3004 :fade-after (meters 90) :falloff-to (meters 110) :flags (start-dead))
     (sp-item 3004 :fade-after (meters 90) :falloff-to (meters 110) :flags (start-dead));; I think this sets the fade point of the final linked blob/streak.(might also be the streak)
 |#
+#|
     )
   )
+|#
 
 (defpart 3000
   :init-specs ((:texture (new 'static 'texture-id :index #xf :page #x2))
@@ -201,10 +205,677 @@
     (:fade-a -0.01904762)
     (:accel-y (meters -0.000100000005) (meters -0.00015))
     (:timer (seconds 0.1) (seconds 0.997))
-    (:flags (bit2 bit3 bit14))
+    (:flags (bit2 bit14))
     (:next-time (seconds 0.8))
     (:next-launcher 198)
     )
+  )
+
+
+(defpartgroup group-eco-darkk ;; uses the dark bomb purple effects
+  ;; EBR note: jak 1 uses id # up to and including 708
+  :id 710
+  :bounds (static-bspherem 0 0 0 1)
+  ;; EBR note: jak 1 uses defpart # up to and including 1999
+  :parts (
+
+   ;(sp-item 3296) ;; purple glow w/ white center
+
+   ;(sp-item 3297) ;; big range dark purple / light magenta sparkles
+
+   ;(sp-item 3298) ;; dark eco strobe light condensed
+   
+   (sp-item 3300 :flags (launch-asap) :binding 3301)
+
+
+
+
+   (sp-item 3301 :flags (start-dead launch-asap) :binding 3302)
+
+   (sp-item 3302 :flags (start-dead launch-asap) :binding 2057)
+   (sp-item 3302 :flags (start-dead launch-asap) :binding 2057)
+   (sp-item 3302 :flags (start-dead launch-asap) :binding 2057)
+   (sp-item 3302 :flags (start-dead launch-asap) :binding 2057)
+
+   (sp-item 3303 :fade-after (meters 100) :period (seconds 2) :length (seconds 0.017))
+
+   (sp-item 3304 :fade-after (meters 100) :period (seconds 2) :length (seconds 0.017) :binding 3305)
+   (sp-item 3305 :flags (start-dead launch-asap) :binding 3306)
+   (sp-item 3306 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+   (sp-item 3305 :flags (start-dead launch-asap) :binding 3306)
+   (sp-item 3306 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+   (sp-item 3305 :flags (start-dead launch-asap) :binding 3306)
+   (sp-item 3306 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+   (sp-item 3305 :flags (start-dead launch-asap) :binding 3306)
+   (sp-item 3306 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+
+   (sp-item 3307 :fade-after (meters 100) :period (seconds 2) :length (seconds 0.017) :binding 3308)
+   (sp-item 3308 :flags (start-dead launch-asap) :binding 3309)
+   (sp-item 3309 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+   (sp-item 3308 :flags (start-dead launch-asap) :binding 3309)
+   (sp-item 3309 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+   (sp-item 3308 :flags (start-dead launch-asap) :binding 3309)
+   (sp-item 3309 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+   (sp-item 3308 :flags (start-dead launch-asap) :binding 3309)
+   (sp-item 3309 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+
+    )
+  )
+
+;; failed to figure out what this is:
+(defpart 3297 ;; 2126
+  :init-specs ((:texture (hotdot effects))
+    (:num 8.0)
+    (:y (meters 0))
+    (:scale-x (meters 0.4) (meters 0.8))
+    (:scale-y :copy scale-x)
+    (:r 64.0 128.0)
+    (:g 0.0 32.0)
+    (:b 96.0 64.0)
+    (:a 32.0 96.0)
+    (:vel-y (meters 0.053333335) (meters 0.21333334))
+    (:scalevel-x (meters -0.0026666666))
+    (:scalevel-y :copy scalevel-x)
+    (:accel-y (meters -0.00016666666) (meters -0.00016666666))
+    (:friction 0.9)
+    (:timer (seconds 1))
+    (:flags (bit2 bit14))
+    (:next-time (seconds 0.1) (seconds 0.297))
+    (:next-launcher 2129)
+    (:conerot-x (degrees 0) (degrees 180))
+    (:conerot-y (degrees 0) (degrees 360))
+    (:conerot-radius (meters 2) (meters 4))
+    )
+  )
+
+;; failed to figure out what this is:
+(defpart 3299 ;;2129
+  :init-specs ((:fade-a -1.0666667))
+  )
+
+;; failed to figure out what this is:
+(defpart 3298 ;; 2128
+  :init-specs ((:texture (hotdot effects))
+    (:num 6.0)
+    (:y (meters 0))
+    (:scale-x (meters 0.4))
+    (:rot-z (degrees 0) (degrees 180))
+    (:scale-y (meters 16))
+    (:r 64.0 192.0)
+    (:g 0.0 32.0)
+    (:b 128.0 64.0)
+    (:a 32.0 64.0)
+    (:scalevel-y (meters 1.04))
+    (:fade-a -1.6)
+    (:timer (seconds 0.2))
+    (:flags (bit2 bit3 bit14))
+    )
+  )
+
+;; failed to figure out what this is:
+(defpart 3296;; 2125
+  :init-specs ((:texture (starflash effects))
+    (:num 1.0)
+    (:y (meters 0))
+    (:scale-x (meters 1))
+    (:scale-y :copy scale-x)
+    (:r 64.0 192.0)
+    (:g 0.0 32.0)
+    (:b 128.0 64.0)
+    (:a 128.0)
+    (:fade-a -2.3272727)
+    (:timer (seconds 0.18))
+    (:flags (bit2 bit3 bit14))
+    )
+  )
+
+;;EBR note: using yellow eco to edit and figure out exactly whats going on
+
+;; serves the function of sparticle track root prism, you link the blob to it?
+(defpart 3300 ;;191
+  :init-specs
+  ((:texture (hotdot effects))
+   (:num 1.0)
+   (:x (meters 4))
+   (:scale-x (meters 0.01))
+   (:scale-y :copy scale-x)
+   (:timer (seconds -0.005))
+   (:flags (bit3 bit14))
+   (:func 'sparticle-track-root-prim)))
+
+;; this is the cloudy hazy main blob
+(defpart 3301 ;;192
+  :init-specs
+  ((:texture (bigpuff effects))
+   (:num 5.0)
+   (:y (meters 0) (meters 16))
+   (:z (meters 0.15) (meters 0.2))
+   (:scale-x (meters 2) (meters 2))
+   (:rot-z (degrees 0) (degrees 360))
+   (:scale-y :copy scale-x)
+   ;; EBR note: this is for a magenta oversaturated white eco "counterpart"
+#|
+   (:r 128.0 128.0)
+   (:g 64.0 192.0)
+   (:b 0.0)
+   (:a 16.0)
+|#
+   ;; EBR note: this uses the color from the darkecobarrel explode
+   (:r 0.0 96.0)
+   (:g 0.0 32.0)
+   (:b 64.0 32.0)
+   (:a 64.0) ;; 64.0)
+   (:omega 0.0 65536.0)
+   (:vel-x (meters 0.0148148155) (meters 0.0044444446))
+   (:vel-y (meters 0))
+   (:vel-z (meters 0))
+   (:rotvel-z (degrees -0.1) 1 (degrees 0.2))
+   (:timer (seconds -0.005))
+   ;;EBR note: using all 3 flags made the color completely magenta pink like my original try
+   (:flags (
+            ;bit3 ;; this alone generates 4 clouds that just shoot left, unaligned
+            bit7 ;; this alone has centered see through yellow clouds overlapping, dark are less transparent
+            ;bit14 ;; same as bit 3?
+            ))
+   (:func 'eco-fadeout)
+   (:next-time (seconds 0.035))
+   (:next-launcher 196)))
+
+(defpart 3302 ;; mix of yellow eco 193 and dark eco pool nasty 2052
+  :init-specs
+  ((:texture (hotdot effects))
+   (:num 1.0)
+   (:y (meters 0) (meters 16))
+   (:z (meters 0.75) (meters 0.1))
+   (:scale-x (meters 0.4) (meters 0.2))
+   (:scale-y :copy scale-x)
+   (:r 0.0 96.0)
+   (:g 0.0 32.0)
+   (:b 64.0 32.0)
+   (:a 64.0 64.0)
+   (:omega 0.0 65536.0)
+   (:vel-x (meters 0.017777778) (meters 0.0148148155))
+   (:vel-y (meters 0))
+   (:vel-z (meters 0))
+   (:timer (seconds -0.005))
+   (:flags (bit2 bit3 bit7 bit14))
+   (:func 'eco-fadeout)
+   (:next-time (seconds 0.035))
+   (:next-launcher 197)))
+
+(defpart 3303 ;;2056 ;; not sure exactly what this is
+  :init-specs
+  ((:texture (starflash effects))
+   (:num 1.0)
+   (:scale-x (meters 8))
+   (:rot-z (degrees 0) (degrees 360))
+   (:scale-y :copy scale-x)
+   (:r 0.0 96.0)
+   (:g 0.0 32.0)
+   (:b 64.0 32.0)
+   (:a 64.0)
+   (:fade-a -1.8285716)
+   (:timer (seconds 0.18))
+   (:flags (bit2 bit3 bit14))))
+
+(defpart 3304 ;; 2057 ;; flashes, across the color range?
+  :init-specs
+  ((:texture (starflash effects))
+   (:num 1.0 6.0)
+   (:y (meters 0))
+   (:scale-x (meters 0.1))
+   (:scale-y :copy scale-x)
+   (:a 0.0)
+   (:vel-y (meters 0.04) (meters 0.02))
+   (:accel-y (meters -0.00083333335))
+   (:friction 0.94)
+   (:timer (seconds 0.8))
+   (:flags (bit3))
+   (:conerot-x (degrees 0) (degrees 140))
+   (:conerot-y (degrees 0) (degrees 360))
+   ))
+
+(defpart 3305 ;; 2052
+  :init-specs
+  ((:texture (hotdot effects))
+   (:num 1.0)
+   (:y (meters 0) (meters 16))
+   (:z (meters 0.3) (meters 0.3))
+   (:scale-x (meters 0.4) (meters 0.3))
+   (:rot-z (degrees 0) (degrees 360))
+   (:scale-y :copy scale-x)
+   (:r 0.0 96.0)
+   (:g 0.0 32.0)
+   (:b 64.0 32.0)
+   (:a 64.0 64.0)
+   (:omega 0.0 65536.0)
+   (:vel-x (meters 0.026666667) (meters 0.10666667))
+   (:scalevel-x (meters -0.000909091))
+   (:rotvel-z (degrees -0.3) 1 (degrees 0.6))
+   (:scalevel-y :copy scalevel-x)
+   (:fade-g -0.26666668)
+   (:fade-a -0.19393939)
+   (:timer (seconds 0.2) (seconds 0.597))
+   (:flags (bit2 bit3 bit7 bit14))))
+
+(defpart 3306 ;; 2053
+  :init-specs
+  ((:texture (hotdot effects))
+   (:num 1.0)
+   (:scale-x (meters 0.4) (meters 0.1))
+   (:scale-y :copy scale-x)
+   (:r 32.0 96.0)
+   (:g 0.0 32.0)
+   (:b 64.0 32.0)
+   (:a 32.0 32.0)
+   (:scalevel-x (meters -0.0006190476))
+   (:scalevel-y :copy scalevel-x)
+   (:fade-a -0.01904762)
+   (:accel-y (meters -0.000100000005) (meters -0.00015))
+   (:timer (seconds 0.1) (seconds 0.797))
+   (:flags (bit2 bit3 bit14))
+   (:next-time (seconds 0.8))
+   (:next-launcher 198)))
+
+(defpart 3307 ;;2058
+  :init-specs
+  ((:texture (starflash effects))
+   (:num 1.0 6.0)
+   (:y (meters 1))
+   (:scale-x (meters 0.1))
+   (:scale-y :copy scale-x)
+   (:a 0.0)
+   (:vel-y (meters 0.04) (meters 0.02))
+   (:accel-y (meters -0.00083333335))
+   (:friction 0.94)
+   (:timer (seconds 0.8))
+   (:flags (bit3))
+   (:conerot-x (degrees 0) (degrees 140))
+   (:conerot-y (degrees 0) (degrees 360))))
+
+(defpart 3308 ;; 2054
+  :init-specs
+  ((:texture (hotdot effects))
+   (:num 1.0)
+   (:y (meters 0) (meters 16))
+   (:z (meters 0.3) (meters 0.3))
+   (:scale-x (meters 0.4) (meters 0.3))
+   (:rot-z (degrees 0) (degrees 360))
+   (:scale-y :copy scale-x)
+   (:r 16.0 32.0)
+   (:g 0.0 16.0)
+   (:b 192.0 64.0)
+   (:a 64.0 64.0)
+   (:omega 0.0 65536.0)
+   (:vel-x (meters 0.026666667) (meters 0.10666667))
+   (:scalevel-x (meters -0.000909091))
+   (:rotvel-z (degrees -0.3) 1 (degrees 0.6))
+   (:scalevel-y :copy scalevel-x)
+   (:fade-g -0.26666668)
+   (:fade-a -0.19393939)
+   (:timer (seconds 0.2) (seconds 0.597))
+   (:flags (bit2 bit3 bit7 bit14))))
+
+(defpart 3309 ;; 2055
+  :init-specs
+  ((:texture (hotdot effects))
+   (:num 1.0)
+   (:scale-x (meters 0.4) (meters 0.1))
+   (:scale-y :copy scale-x)
+   (:r 16.0 32.0)
+   (:g 0.0 16.0)
+   (:b 192.0 64.0)
+   (:a 32.0 32.0)
+   (:scalevel-x (meters -0.0006190476))
+   (:scalevel-y :copy scalevel-x)
+   (:fade-a -0.01904762)
+   (:accel-y (meters -0.000100000005) (meters -0.00015))
+   (:timer (seconds 0.1) (seconds 0.797))
+   (:flags (bit2 bit3 bit14))
+   (:next-time (seconds 0.8))
+   (:next-launcher 198)
+   )
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;EBR note: this is for the eco blob
+;; from the group-darkecobarrel-explode
+;; the exploding cloud part-s
+
+(defpart 2126
+  :init-specs ((:texture (hotdot effects))
+    (:num 8.0)
+    (:y (meters 0))
+    (:scale-x (meters 0.4) (meters 0.8))
+    (:scale-y :copy scale-x)
+    (:r 64.0 128.0)
+    (:g 0.0 32.0)
+    (:b 96.0 64.0)
+    (:a 32.0 96.0)
+    (:vel-y (meters 0.053333335) (meters 0.21333334))
+    (:scalevel-x (meters -0.0026666666))
+    (:scalevel-y :copy scalevel-x)
+    (:accel-y (meters -0.00016666666) (meters -0.00016666666))
+    (:friction 0.9)
+    (:timer (seconds 1))
+    (:flags (bit2 bit14))
+    (:next-time (seconds 0.1) (seconds 0.297))
+    (:next-launcher 2129)
+    (:conerot-x (degrees 0) (degrees 180))
+    (:conerot-y (degrees 0) (degrees 360))
+    (:conerot-radius (meters 2) (meters 4))
+    )
+  )
+
+;; failed to figure out what this is:
+(defpart 2129
+  :init-specs ((:fade-a -1.0666667))
+  )
+
+;; failed to figure out what this is:
+(defpart 2128
+  :init-specs ((:texture (hotdot effects))
+    (:num 6.0)
+    (:y (meters 0))
+    (:scale-x (meters 0.4))
+    (:rot-z (degrees 0) (degrees 180))
+    (:scale-y (meters 16))
+    (:r 64.0 192.0)
+    (:g 0.0 32.0)
+    (:b 128.0 64.0)
+    (:a 32.0 64.0)
+    (:scalevel-y (meters 1.04))
+    (:fade-a -1.6)
+    (:timer (seconds 0.2))
+    (:flags (bit2 bit3 bit14))
+    )
+  )
+
+;; failed to figure out what this is:
+(defpart 2125
+  :init-specs ((:texture (starflash effects))
+    (:num 1.0)
+    (:y (meters 0))
+    (:scale-x (meters 32))
+    (:scale-y :copy scale-x)
+    (:r 64.0 192.0)
+    (:g 0.0 32.0)
+    (:b 128.0 64.0)
+    (:a 128.0)
+    (:fade-a -2.3272727)
+    (:timer (seconds 0.18))
+    (:flags (bit2 bit3 bit14))
+    )
+  )
+
+
+(defpart 2127
+  :init-specs ((:texture (bigpuff effects))
+    (:num 1.0);;(:num 16.0)
+    (:x (meters -1) (meters 2))
+    (:y (meters -1) (meters 2))
+    (:z (meters -1) (meters 2))
+    (:scale-x (meters 4) (meters 2))
+    (:rot-z (degrees 0) (degrees 360))
+    (:scale-y :copy scale-x)
+    (:r 0.0 96.0)
+    (:g 0.0 32.0)
+    (:b 64.0 32.0)
+    (:a 64.0 64.0)
+    ;(:vel-y (meters 0.08) (meters 0.04))
+    ;(:scalevel-x (meters 0.002))
+    ;(:rotvel-z (degrees -0.6) (degrees 1.2))
+    ;(:scalevel-y :copy scalevel-x)
+    (:fade-a -0.28444445)
+    ;(:accel-y (meters 0.00016666666) (meters 0.00016666666))
+    ;(:friction 0.8)
+    (:timer (seconds 1.7))
+    (:flags (bit2 bit14))
+    ;(:conerot-x (degrees 0) (degrees 180))
+    ;(:conerot-y (degrees 0) (degrees 360))
+    ;(:conerot-radius (meters 0) (meters 6))
+    )
+  )
+
+
+#|
+;; EBR note: this is a customized version of part 2127
+;;  with a some numbers from the light eco blob
+(defpart 2127
+  :init-specs ((:texture (bigpuff effects))
+    (:num 0.2);;(:num 16.0)
+    (:x (meters -0.001) (meters 0.002))
+    (:y (meters -0.001) (meters 0.002))
+    (:z (meters -0.001) (meters 0.002))
+    (:scale-x (meters 2) (meters 0.5))
+    (:rot-z (degrees 0) (degrees 360))
+    (:scale-y :copy scale-x)
+    (:r 0.0 96.0)
+    (:g 0.0 32.0)
+    (:b 64.0 32.0)
+    (:a 64.0 64.0)
+    (:vel-y (meters 0))
+    ;(:scalevel-x (meters 0.006666667))
+    (:rotvel-z (degrees -0.3) (degrees 0.6))
+    ;(:scalevel-y :copy scalevel-x)
+    (:fade-a 0.85333335)
+    (:timer (seconds 1))
+    (:flags (bit2 bit14))
+    ;(:next-time (seconds 0.4) (seconds 0.097))
+    ;(:next-launcher 2908)
+    ;(:conerot-x (degrees 0) (degrees 180))
+    ;(:conerot-y (degrees 0) (degrees 360))
+    ;(:conerot-radius (meters 0) (meters 6))
+    )
+  )
+|#
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;EBR note: from group-darkecobarrel-explode from lavatube-obs.gc
+;;these are the shooting sparks effect
+(defpart 9295 ;;2166 ;; seems to be somewhat of an origin or parent the dots are linked to
+  :init-specs ((:texture (starflash effects))
+    (:num 8.0)
+    (:x (meters 0) (meters 0)) ;; seems to define the origin "box" the particles spawn from
+    (:y (meters 0) (meters 0))
+    (:z (meters 0) (meters 0))
+    (:scale-x (meters 0.1))
+    (:scale-y :copy scale-x)
+    (:a 0.0)
+    (:vel-y (meters 0.0010666667) (meters 0.053333335)) ;; seems to be how far away it spawns to how far it moves?
+    (:accel-y (meters -0.00033333333))
+    (:friction 0.94)
+    (:timer (seconds 0.8))
+    (:flags (bit3))
+    (:conerot-x (degrees 0) (degrees 180))
+    (:conerot-y (degrees 0) (degrees 360))
+    )
+  )
+
+(defpart 9296 ;;296
+  :init-specs ((:texture (hotdot effects))
+    (:num 1.0)
+    (:y (meters 0) (meters 16))
+    (:z (meters 0.3) (meters 0.3))
+    (:scale-x (meters 0.3) (meters 0.3))
+    (:rot-z (degrees 0) (degrees 360))
+    (:scale-y :copy scale-x)
+    (:r 0.0 96.0)
+    (:g 0.0 32.0)
+    (:b 64.0 32.0)
+    (:a 64.0 64.0)
+    (:omega 0.0 65536.0)
+    (:vel-x (meters 0.026666667) (meters 0.10666667))
+    (:scalevel-x (meters -0.000909091))
+    (:rotvel-z (degrees -0.3) 1 (degrees 0.6))
+    (:scalevel-y :copy scalevel-x)
+    (:fade-g -0.26666668)
+    (:fade-a -0.19393939)
+    (:timer (seconds 0.3) (seconds 0.497))
+    (:flags (bit2 bit3 bit7 bit14))
+    )
+  )
+
+(defpart 9297 ;;297
+  :init-specs ((:texture (hotdot effects))
+    (:num 1.0)
+    (:scale-x (meters 0.3) (meters 0.1))
+    (:scale-y :copy scale-x)
+    (:r 32.0 96.0)
+    (:g 0.0 32.0)
+    (:b 64.0 32.0)
+    (:a 32.0 32.0)
+    (:scalevel-x (meters -0.0006190476))
+    (:scalevel-y :copy scalevel-x)
+    (:fade-a -0.01904762)
+    (:accel-y (meters -0.000100000005) (meters -0.00015))
+    (:timer (seconds 0.1) (seconds 0.997))
+    (:flags (bit2 bit3 bit14))
+    (:next-time (seconds 0.8))
+    (:next-launcher 9198)
+    )
+  )
+
+(defpart 9198 ;;198
+  :init-specs ((:fade-g 0.0)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;EBR note: from group-dark-eco-pool-nasty in dark-eco-pool.gc
+;;these are the also shooting sparks effect, but smaller
+(defpart 2056
+  :init-specs
+  ((:texture (starflash effects))
+   (:num 1.0)
+   (:scale-x (meters 8))
+   (:rot-z (degrees 0) (degrees 360))
+   (:scale-y :copy scale-x)
+   (:r 0.0 96.0)
+   (:g 0.0 32.0)
+   (:b 64.0 32.0)
+   (:a 64.0)
+   (:fade-a -1.8285716)
+   (:timer (seconds 0.18))
+   (:flags (bit2 bit3 bit14))))
+
+(defpart 2057
+  :init-specs
+  ((:texture (starflash effects))
+   (:num 1.0 6.0)
+   (:y (meters 1))
+   (:scale-x (meters 0.1))
+   (:scale-y :copy scale-x)
+   (:a 0.0)
+   (:vel-y (meters 0.04) (meters 0.02))
+   (:accel-y (meters -0.00083333335))
+   (:friction 0.94)
+   (:timer (seconds 0.8))
+   (:flags (bit3))
+   (:conerot-x (degrees 0) (degrees 140))
+   (:conerot-y (degrees 0) (degrees 360))))
+
+(defpart 2052
+  :init-specs
+  ((:texture (hotdot effects))
+   (:num 1.0)
+   (:y (meters 0) (meters 16))
+   (:z (meters 0.3) (meters 0.3))
+   (:scale-x (meters 0.4) (meters 0.3))
+   (:rot-z (degrees 0) (degrees 360))
+   (:scale-y :copy scale-x)
+   (:r 0.0 96.0)
+   (:g 0.0 32.0)
+   (:b 64.0 32.0)
+   (:a 64.0 64.0)
+   (:omega 0.0 65536.0)
+   (:vel-x (meters 0.026666667) (meters 0.10666667))
+   (:scalevel-x (meters -0.000909091))
+   (:rotvel-z (degrees -0.3) 1 (degrees 0.6))
+   (:scalevel-y :copy scalevel-x)
+   (:fade-g -0.26666668)
+   (:fade-a -0.19393939)
+   (:timer (seconds 0.2) (seconds 0.597))
+   (:flags (bit2 bit3 bit7 bit14))))
+
+(defpart 2053
+  :init-specs
+  ((:texture (hotdot effects))
+   (:num 1.0)
+   (:scale-x (meters 0.4) (meters 0.1))
+   (:scale-y :copy scale-x)
+   (:r 32.0 96.0)
+   (:g 0.0 32.0)
+   (:b 64.0 32.0)
+   (:a 32.0 32.0)
+   (:scalevel-x (meters -0.0006190476))
+   (:scalevel-y :copy scalevel-x)
+   (:fade-a -0.01904762)
+   (:accel-y (meters -0.000100000005) (meters -0.00015))
+   (:timer (seconds 0.1) (seconds 0.797))
+   (:flags (bit2 bit3 bit14))
+   (:next-time (seconds 0.8))
+   (:next-launcher 198)))
+
+(defpart 2058
+  :init-specs
+  ((:texture (starflash effects))
+   (:num 1.0 6.0)
+   (:y (meters 1))
+   (:scale-x (meters 0.1))
+   (:scale-y :copy scale-x)
+   (:a 0.0)
+   (:vel-y (meters 0.04) (meters 0.02))
+   (:accel-y (meters -0.00083333335))
+   (:friction 0.94)
+   (:timer (seconds 0.8))
+   (:flags (bit3))
+   (:conerot-x (degrees 0) (degrees 140))
+   (:conerot-y (degrees 0) (degrees 360))))
+
+(defpart 2054
+  :init-specs
+  ((:texture (hotdot effects))
+   (:num 1.0)
+   (:y (meters 0) (meters 16))
+   (:z (meters 0.3) (meters 0.3))
+   (:scale-x (meters 0.4) (meters 0.3))
+   (:rot-z (degrees 0) (degrees 360))
+   (:scale-y :copy scale-x)
+   (:r 16.0 32.0)
+   (:g 0.0 16.0)
+   (:b 192.0 64.0)
+   (:a 64.0 64.0)
+   (:omega 0.0 65536.0)
+   (:vel-x (meters 0.026666667) (meters 0.10666667))
+   (:scalevel-x (meters -0.000909091))
+   (:rotvel-z (degrees -0.3) 1 (degrees 0.6))
+   (:scalevel-y :copy scalevel-x)
+   (:fade-g -0.26666668)
+   (:fade-a -0.19393939)
+   (:timer (seconds 0.2) (seconds 0.597))
+   (:flags (bit2 bit3 bit7 bit14))))
+
+(defpart 2055
+  :init-specs
+  ((:texture (hotdot effects))
+   (:num 1.0)
+   (:scale-x (meters 0.4) (meters 0.1))
+   (:scale-y :copy scale-x)
+   (:r 16.0 32.0)
+   (:g 0.0 16.0)
+   (:b 192.0 64.0)
+   (:a 32.0 32.0)
+   (:scalevel-x (meters -0.0006190476))
+   (:scalevel-y :copy scalevel-x)
+   (:fade-a -0.01904762)
+   (:accel-y (meters -0.000100000005) (meters -0.00015))
+   (:timer (seconds 0.1) (seconds 0.797))
+   (:flags (bit2 bit3 bit14))
+   (:next-time (seconds 0.8))
+   (:next-launcher 198)
+   )
   )
 
 (defpartgroup group-eco-darkk-collect
@@ -290,35 +961,27 @@
 (defpartgroup group-part-vent-darkk-active
   :id 712
   :bounds (static-bspherem 0 3 0 5)
-  :parts ((sp-item 3008 :fade-after (meters 40) :period (seconds 1.1) :length (seconds 0.017) :binding 3009)
-    (sp-item 3008 :fade-after (meters 60) :period (seconds 2.455) :length (seconds 0.017) :binding 3009)
-    (sp-item 3008 :fade-after (meters 80) :period (seconds 3.12) :length (seconds 0.017) :binding 3009)
-    (sp-item 3008 :fade-after (meters 100) :period (seconds 1.76) :length (seconds 0.017) :binding 3009)
-    (sp-item 3008 :fade-after (meters 130) :period (seconds 2.67) :length (seconds 0.017) :binding 3009)
-    (sp-item 3009 :flags (start-dead launch-asap) :binding 3010)
-    (sp-item 3009 :flags (start-dead launch-asap) :binding 3010)
-    (sp-item 3009 :flags (start-dead launch-asap) :binding 3010)
-    (sp-item 3009 :flags (start-dead launch-asap) :binding 3010)
-    (sp-item 3009 :flags (start-dead launch-asap) :binding 3010)
-    (sp-item 3009 :flags (start-dead launch-asap) :binding 3010)
-    (sp-item 3009 :flags (start-dead launch-asap) :binding 3010)
-    (sp-item 3009 :flags (start-dead launch-asap) :binding 3010)
-    (sp-item 3010 :flags (start-dead launch-asap) :binding 3011)
-    (sp-item 3010 :flags (start-dead launch-asap) :binding 3011)
-    (sp-item 3010 :flags (start-dead launch-asap) :binding 3011)
-    (sp-item 3010 :flags (start-dead launch-asap) :binding 3011)
-    (sp-item 3010 :flags (start-dead launch-asap) :binding 3011)
-    (sp-item 3010 :flags (start-dead launch-asap) :binding 3011)
-    (sp-item 3010 :flags (start-dead launch-asap) :binding 3011)
-    (sp-item 3010 :flags (start-dead launch-asap) :binding 3011)
-    (sp-item 3011 :fade-after (meters 90) :falloff-to (meters 60) :flags (start-dead))
-    (sp-item 3011 :fade-after (meters 90) :falloff-to (meters 70) :flags (start-dead))
-    (sp-item 3011 :fade-after (meters 90) :falloff-to (meters 80) :flags (start-dead))
-    (sp-item 3011 :fade-after (meters 90) :falloff-to (meters 90) :flags (start-dead))
-    (sp-item 3011 :fade-after (meters 90) :falloff-to (meters 100) :flags (start-dead))
-    (sp-item 3011 :fade-after (meters 90) :falloff-to (meters 100) :flags (start-dead))
-    (sp-item 3011 :fade-after (meters 90) :falloff-to (meters 100) :flags (start-dead))
-    (sp-item 3011 :fade-after (meters 90) :falloff-to (meters 100) :flags (start-dead))
+  :parts (
+   (sp-item 3304 :fade-after (meters 100) :period (seconds 2) :length (seconds 0.017) :binding 3305)
+   (sp-item 3305 :flags (start-dead launch-asap) :binding 3306)
+   (sp-item 3306 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+   (sp-item 3305 :flags (start-dead launch-asap) :binding 3306)
+   (sp-item 3306 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+   (sp-item 3305 :flags (start-dead launch-asap) :binding 3306)
+   (sp-item 3306 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+   (sp-item 3305 :flags (start-dead launch-asap) :binding 3306)
+   (sp-item 3306 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+
+   (sp-item 3307 :fade-after (meters 100) :period (seconds 2) :length (seconds 0.017) :binding 3308)
+   (sp-item 3308 :flags (start-dead launch-asap) :binding 3309)
+   (sp-item 3309 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+   (sp-item 3308 :flags (start-dead launch-asap) :binding 3309)
+   (sp-item 3309 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+   (sp-item 3308 :flags (start-dead launch-asap) :binding 3309)
+   (sp-item 3309 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+   (sp-item 3308 :flags (start-dead launch-asap) :binding 3309)
+   (sp-item 3309 :fade-after (meters 80) :falloff-to (meters 100) :flags (start-dead))
+
     (sp-item 3012 :fade-after (meters 140) :falloff-to (meters 140))
     (sp-item 3013)
     )
@@ -360,6 +1023,7 @@
     (:scale-x (meters 1.5) (meters 0.4))
     (:rot-z (degrees 0) (degrees 360))
     (:scale-y :copy scale-x)
+    ;;EBR note: this is for a magenta oversaturated white eco "counterpart"
     (:r 96.0 96.0)
     (:g 0.0 0.0)
     (:b 96.0 96.0)
@@ -456,7 +1120,7 @@
     )
   )
 
-(defpartgroup group-eco-whyte;; This is the thicker, completely white eco cloud.(custom made)
+(defpartgroup group-eco-whyte ;; This is the thicker, completely white eco cloud
   :id 715
   ;;:flags (use-local-clock)
   :bounds (static-bspherem 0 0 0 1)
@@ -2069,7 +2733,7 @@
 
 (defpart 183
   :init-specs
-  ((:texture (bigpuff effects))
+  ((:texture (bigpuff effects)) ;; EBR note: this is the main vent flowing color, runs constantly
    (:num 0.6 0.6)
    (:x (meters -0.75) (meters 1.5))
    (:y (meters 0.5))
@@ -2089,7 +2753,7 @@
 
 (defpart 182
   :init-specs
-  ((:texture (starflash effects))
+  ((:texture (starflash effects)) ;; EBR note: seems to be the outer edge/wisps coming off of the main flow?
    (:num 0.1 0.3)
    (:x (meters -0.5) (meters 1))
    (:y (meters 0.5))
@@ -2109,7 +2773,7 @@
 
 (defpart 178
   :init-specs
-  ((:texture (starflash effects))
+  ((:texture (starflash effects)) ;; EBR note: main flash that little guys bind to?
    (:num 1.0)
    (:x (meters 0) (meters 1.5))
    (:scale-x (meters 0.01))
@@ -2121,7 +2785,7 @@
    (:conerot-x (degrees 0) (degrees 5))
    (:rotate-y (degrees 0) (degrees 360))))
 
-(defpart 179
+(defpart 179 ;; EBR note: the "hotdot" cirles outer edge, hard to see, mostly white inside
   :init-specs
   ((:texture (hotdot effects))
    (:num 1.0)
@@ -2140,7 +2804,7 @@
    (:timer (seconds 1.25))
    (:flags (bit2 bit3 bit7 bit14))))
 
-(defpart 180
+(defpart 180 ;; EBR note: same as above? idk
   :init-specs
   ((:texture (hotdot effects))
    (:num 1.0)
@@ -2159,7 +2823,7 @@
    (:timer (seconds 1.25))
    (:flags (bit2 bit3 bit7 bit14))))
 
-(defpart 181
+(defpart 181 ;; EBR note: the hotdot's tail/trail
   :init-specs
   ((:texture (hotdot effects))
    (:num 0.5 2.0)

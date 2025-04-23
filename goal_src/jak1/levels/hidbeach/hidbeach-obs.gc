@@ -197,3 +197,53 @@
   0
   (none)
   )
+
+(deftype lighttt-eco (process-drawable)
+  ((root        collide-shape :override)
+   (broken-look lod-set :inline))
+  (:states
+   lighttt-eco-idle))
+
+(defskelgroup *lighttt-eco-sg*
+  light-eco
+  light-eco-small-lod0-jg
+  -1
+  ((light-eco-small-lod0-mg (meters 999999)))
+  :bounds (static-spherem 0 0 0 1.5))
+
+
+
+(defstate lighttt-eco-idle (lighttt-eco)
+  :code
+    (behavior ()
+      (process-spawn part-tracker
+                  :init
+                  part-tracker-init
+                  (-> *part-group-id-table* 691)
+                  -1
+                  #f
+                  #f
+                  #f
+                  (-> self root trans)
+                  :to
+                  *entity-pool*)
+                  ))
+
+(defmethod init-from-entity! ((this lighttt-eco) (arg0 entity-actor))
+  (let ((s4-0 (new 'process 'collide-shape this (collide-list-enum hit-by-others))))
+    (let ((s3-0 (new 'process 'collide-shape-prim-mesh s4-0 (the-as uint 0) (the-as uint 0))))
+      (set! (-> s3-0 prim-core collide-as) (collide-kind wall-object))
+      (set! (-> s3-0 collide-with) (collide-kind target))
+      (set! (-> s3-0 prim-core action) (collide-action solid))
+      (set! (-> s3-0 prim-core offense) (collide-offense indestructible))
+      (set! (-> s3-0 transform-index) 3)
+      ;;(set-vector! (-> s3-0 local-sphere) 0.0 22528.0 0.0 30720.0)
+      (set-root-prim! s4-0 s3-0))
+    (set! (-> s4-0 nav-radius) (* 0.75 (-> s4-0 root-prim local-sphere w)))
+    (backup-collide-with-as s4-0)
+    (set! (-> this root) s4-0))
+  (process-drawable-from-entity! this arg0)
+  (initialize-skeleton this *lighttt-eco-sg* '())
+  ;;(set-vector! (-> this draw color-emissive) 0.125 0.0625 0.0 0.0)
+  (go lighttt-eco-idle)
+  (none))

@@ -237,41 +237,39 @@
             "eco-info": ["int32", 6, 117]
         }
     },
-/*
     {
-      "trans": [4.0, 75.00, 0.0], // hid-beach-zeppelin
+      "trans": [10.00, 5.45, -375.00], // hid-beach-woods
       "etype": "fuel-cell",
-      "game_task": 0, //117,
+      "game_task": 0, //119,
       "quat": [0, 0, 0, 1],
-      "bsphere": [4.0, 75.00, 0.0, 10],
+      "bsphere": [10.00, 5.45, -375.00, 10],
       "lump": {
           "name": "hid-beach-fuel-cell-2",
           "eco-info": ["int32", 6, 119]
       }
     },
     {
-        "trans": [217.0, 15.0, 0.0], // hid-beach-cave
+        "trans": [449.588, -16.933, -1230.66], // hid-beach-cave
         "etype": "fuel-cell",
-        "game_task": 0, //117,
+        "game_task": 0, //120,
         "quat": [0, 0, 0, 1],
-        "bsphere": [217.0, 15.0, 0.0, 10],
+        "bsphere": [449.588, -16.933, -1230.66, 10],
         "lump": {
             "name": "hid-beach-fuel-cell-3",
             "eco-info": ["int32", 6, 120]
         }
     },
     {
-        "trans": [242.0, -106.0, 0.0], // hid-beach-basement
+        "trans": [-5.04466, 351.74, -865.672], // hid-beach-summit
         "etype": "fuel-cell",
-        "game_task": 0, //117,
+        "game_task": 0, //121,
         "quat": [0, 0, 0, 1],
-        "bsphere": [242.0, -106.0, 0.0, 10],
+        "bsphere": [-5.04466, 351.74, -865.672, 10],
         "lump": {
             "name": "hid-beach-fuel-cell-4",
             "eco-info": ["int32", 6, 121]
         }
     },
-*/
 //////////
 // ORBS //
 //////////
@@ -347,7 +345,7 @@
 // hid-beach-buzzer
 // to get SF task = game-task + (2^16 * buzzer-count)
 // buzzer-count starts at 0 (fly #1), and ends at 6 (fly #7)
-/*
+///*
     {
         "trans": [-2.0, 5.00, 130.0],
         "etype": "crate",
@@ -432,7 +430,7 @@
             "eco-info": ["int32", 8, 393338] // task = game-task + (393,216)
         }
     },
-*/
+//*/
 //Wood Barrels below
 ///*
     {
@@ -561,11 +559,11 @@
 //Yellow Eco below
 ///*
     {
-      "trans": [-2.0, 5.0, 50.0],
+      "trans": [-2.0, 6.0, 50.0],
       "etype": "eco-yellow",
       "game_task": 0,
       "quat" : [0, 0, 0, 1],
-      "bsphere": [-2.0, 5.0, 50.0, 10.0],
+      "bsphere": [-2.0, 6.0, 50.0, 10.0],
       "lump": {
         "name": "hid-beach-eco-yellow-1"
       }
@@ -574,11 +572,11 @@
 //Red Eco below
 ///*
     {
-      "trans": [4.0, 5.0, 50.0],
+      "trans": [4.0, 6.0, 50.0],
       "etype": "eco-red",
       "game_task": 0,
       "quat" : [0, 0, 0, 1],
-      "bsphere": [4.0, 5.0, 50.0, 10.0],
+      "bsphere": [4.0, 6.0, 50.0, 10.0],
       "lump": {
         "name": "hid-beach-eco-red-1"
       }
@@ -587,11 +585,11 @@
 //Blue Eco below
 ///*
     {
-      "trans": [10.0, 5.0, 50.0],
+      "trans": [10.0, 6.0, 50.0],
       "etype": "eco-blue",
       "game_task": 0,
       "quat" : [0, 0, 0, 1],
-      "bsphere": [10.0, 5.0, 50.0, 10.0],
+      "bsphere": [10.0, 6.0, 50.0, 10.0],
       "lump": {
         "name": "hid-beach-eco-blue-1"
       }
@@ -600,11 +598,11 @@
 //Green Eco below
 ///*
     {
-      "trans": [16.0, 5.0, 50.0],
+      "trans": [16.0, 6.0, 50.0],
       "etype": "health",
       "game_task": 0,
       "quat" : [0, 0, 0, 1],
-      "bsphere": [16.0, 5.0, 50.0, 10.0],
+      "bsphere": [16.0, 6.0, 50.0, 10.0],
       "lump": {
         "name": "hid-beach-eco-green-1"
       }
@@ -613,11 +611,11 @@
 //Dark Eco below
 ///*
     {
-      "trans": [22.0, 5.0, 50.0],
+      "trans": [22.0, 6.0, 50.0],
       "etype": "eco-darkk",
       "game_task": 0,
       "quat" : [0, 0, 0, 1],
-      "bsphere": [22.0, 5.0, 50.0, 10.0],
+      "bsphere": [22.0, 6.0, 50.0, 10.0],
       "lump": {
         "name": "hid-beach-eco-darkk-1"
       }
@@ -626,11 +624,11 @@
 //White Eco below
 ///*
     {
-      "trans": [28.0, 5.0, 50.0],
+      "trans": [28.0, 6.0, 50.0],
       "etype": "eco-whyte",
       "game_task": 0,
       "quat" : [0, 0, 0, 1],
-      "bsphere": [28.0, 5.0, 50.0, 10.0],
+      "bsphere": [28.0, 6.0, 50.0, 10.0],
       "lump": {
         "name": "hid-beach-eco-whyte-1"
       }
@@ -639,16 +637,117 @@
 //Light Eco below
 ///*
     {
-      "trans": [34.0, 5.0, 50.0],
+      "trans": [34.0, 6.0, 50.0],
       "etype": "eco-lightt",
       "game_task": 0,
       "quat" : [0, 0, 0, 1],
-      "bsphere": [34.0, 5.0, 50.0, 10.0],
+      "bsphere": [34.0, 6.0, 50.0, 10.0],
       "lump": {
         "name": "hid-beach-eco-lightt-1"
       }
     },
 //*/
+//NEW Darkecobox Eco Tests
+///*
+    {
+      "trans": [40.0, 7.0, 50.0],
+      "etype": "hidbeach-part",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [40.0, 7.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-dark-eco-test",
+        "art-name":"group-dark-eco-test2"//,
+        //"effect-param": ["float", 11.0, 60.0, 12.0, 10.0],  // ??, ??, ??, ??
+        //"cycle-speed": ["float", -1.0, 0.0]
+      }
+    },
+//*/
+///*
+    {
+      "trans": [40.0, 7.0, 50.0],
+      "etype": "hidbeach-part",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [40.0, 7.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-dark-eco-blob",
+        "art-name":"group-dark-eco-blob"//,
+        //"effect-param": ["float", 11.0, 60.0, 12.0, 10.0],  // ??, ??, ??, ??
+        //"cycle-speed": ["float", -1.0, 0.0]
+      }
+    },
+//*/
+/*
+    {
+      "trans": [40.0, 7.0, 50.0],
+      "etype": "hidbeach-part",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [40.0, 7.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-dark-eco-sparks",
+        "art-name":"group-dark-eco-sparks"//,
+        //"effect-param": ["float", 11.0, 60.0, 12.0, 10.0],  // ??, ??, ??, ??
+        //"cycle-speed": ["float", -1.0, 0.0]
+      }
+    },
+*/
+//NEW LIGHT ECO
+/*
+    {
+      "trans": [46.0, 7.0, 50.0],
+      "etype": "hidbeach-part",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [46.0, 7.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-lighttt-eco-mother",
+        "art-name":"group-lighttt-eco-mother"//,
+        //"effect-param": ["float", 11.0, 60.0, 12.0, 10.0],  // ??, ??, ??, ??
+        //"cycle-speed": ["float", -1.0, 0.0]
+      }
+    },
+*/
+///*
+    {
+      "trans": [46.0, 7.0, 50.0],
+      "etype": "hidbeach-part",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [46.0, 7.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-lighttt-eco-child",
+        "art-name":"group-lighttt-eco-child"//,
+        //"effect-param": ["float", 11.0, 60.0, 12.0, 10.0],  // ??, ??, ??, ??
+        //"cycle-speed": ["float", -1.0, 0.0]
+      }
+    },
+//*/
+/*
+    {
+      "trans": [34.0, 10.0, 50.0],
+      "etype": "lighttt-eco",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [34.0, 10.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-eco-lighttt-1"
+      }
+    },
+*/
+/*
+    {
+      "trans": [34.0, 10.0, 50.0],
+      "etype": "lighttt-eco",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [34.0, 10.0, 50.0, 10.0],
+      "lump": {
+        "name": "hid-beach-eco-lighttt-1"
+      }
+    },
+*/
 ///////////////
 // ECO VENTS //
 ///////////////
@@ -708,6 +807,20 @@
       "bsphere": [16.00, 5.00, 30.00, 10.0],
       "lump": {
         "name": "hid-beach-ecovent-green-1",
+        "eco-info": ["int32", 4, 1]//,
+        //"alt-actor": "stilt-village-crate-'bucket-cell-1"
+      }
+    },
+//*/
+///*
+    {
+      "trans": [0.00, 5.45, -375.00],
+      "etype": "ecovent",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [0.00, 5.45, -375.00, 10],
+      "lump": {
+        "name": "hid-beach-ecovent-green-2",
         "eco-info": ["int32", 4, 1]//,
         //"alt-actor": "stilt-village-crate-'bucket-cell-1"
       }
@@ -965,13 +1078,15 @@
 ////////////////
 /*
     {
-      "trans": [4.00, 5.50, 30.00],
+      "trans": [0.00, 5.45, -375.00],
       "etype": "harvester",
       "game_task": 0,
       "quat" : [0, 0, 0, 1],
-      "bsphere": [4.00, 5.50, 30.00, 10],
+      "bsphere": [0.00, 5.45, -375.00, 10],
       "lump": {
-          "name": "hid-beach-harvester-1"
+          "name": "hid-beach-harvester-green-1",
+          "shadow-mask": 16,
+          "vis-dist": ["meters", 200.0]
       }
   },
 */
@@ -997,11 +1112,11 @@
 //Breakable-Boulders below
 ///*
     {
-      "trans": [-2.0, 5.00, 130.0],
+      "trans": [-2.0, 5.00, 150.0],
       "etype": "hidbeach-boulder",
       "game_task": 0,
       "quat": [0, 0, 0, 1],
-      "bsphere": [-2.0, 5.00, 130.0, 10],
+      "bsphere": [-2.0, 5.00, 150.0, 10],
       "lump": {
           "name": "hid-beach-boulder-1",
           "scale": ["float", 1.0],

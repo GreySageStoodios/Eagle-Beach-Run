@@ -295,7 +295,7 @@
 (define *warp-info*
   (new 'static 'boxed-array :type string 
                       "training-warp" 
-                      "village1-warp" ;; EBR notes: added custom level to warp
+                      "village1-warp" ;; EBR note: added custom level to warp
                       "hid-beach-warp" ;; This change the order as well
                       "village2-warp" 
                       "village3-warp" 
@@ -347,7 +347,7 @@
         (('citadel 
           'lavatube 
           'training
-          ;; EBR notes: added custom level
+          ;; EBR note: added custom level
           'hid-beach
           )
          (while (and *target* (not (logtest? (-> *target* draw status) (draw-status hidden))))

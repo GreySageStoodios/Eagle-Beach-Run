@@ -1,6 +1,6 @@
 ;;-*-Lisp-*-
 (in-package goal)
-;; EBR notes: commented this out to match kuitars file
+;; EBR note: commented this out to match kuitars file
 ;;(bundles "ENGINE.CGO" "GAME.CGO")
 ;;(require "engine/ui/progress/progress-draw.gc")
 ;;(require "engine/ui/progress/progress-part.gc")

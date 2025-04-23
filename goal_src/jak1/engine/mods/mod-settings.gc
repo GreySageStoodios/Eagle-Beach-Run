@@ -52,9 +52,10 @@ if the result of rand-vu-int-range is 1, then DANCE! if it is not 1, then Don't 
 ;; Test Levels:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; "test-zone-start"
- "hid-beach-start"
+;; "hid-beach-start"
 ;; "hid-beach-warp"
-
+ "hid-beach-eco"
+;; "hid-beach-lab"
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
