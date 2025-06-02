@@ -2688,6 +2688,34 @@
                                               :lev1 #f
                                               :disp1 #f
                                               )
+                                            (new 'static 'continue-point
+                                              :name "hid-beach-eco"
+                                              :level 'hid-beach
+                                              :trans (new 'static 'vector :x (meters 50.0) :y (meters 5.0) :z (meters 45.0) :w 1.0)
+                                              :quat (new 'static 'quaternion  :x 0.0 :y 0.0 :z 0.0 :w 1.0)
+                                              :camera-trans (new 'static 'vector :x 0.0 :y 4096.0 :z 0.0 :w 1.0)
+                                              :camera-rot (new 'static 'array float 9 -0.0134 -0.0000 0.9999 -0.1257 0.9920 -0.0016 -0.9919 -0.1257 -0.0133)
+                                              :load-commands '()
+                                              :vis-nick 'hdb
+                                              :lev0 'hid-beach
+                                              :disp0 'display
+                                              :lev1 #f
+                                              :disp1 #f
+                                              )
+                                            (new 'static 'continue-point
+                                              :name "hid-beach-lab"
+                                              :level 'hid-beach
+                                              :trans (new 'static 'vector :x (meters 21.0) :y (meters -300.0) :z (meters -895.0) :w 1.0)
+                                              :quat (new 'static 'quaternion  :x 0.0 :y 0.0 :z 0.0 :w 1.0)
+                                              :camera-trans (new 'static 'vector :x 0.0 :y 4096.0 :z 0.0 :w 1.0)
+                                              :camera-rot (new 'static 'array float 9 -0.0134 -0.0000 0.9999 -0.1257 0.9920 -0.0016 -0.9919 -0.1257 -0.0133)
+                                              :load-commands '()
+                                              :vis-nick 'hdb
+                                              :lev0 'hid-beach
+                                              :disp0 'display
+                                              :lev1 #f
+                                              :disp1 #f
+                                              )
                                           )
                            :tasks '()
                            :priority 100
@@ -2697,7 +2725,7 @@
                            ;; EBR note: bsphere - xyz is the center of the level, w is the radius
                            ;; think its needed to fade moods and sky between levels and to grab relevant level continue/load points 
                            :bsphere (new 'static 'sphere :x 0.0 :y 0.0 :z 0.0 :w 40960000.0);;:w 167772160000.0)
-                           :bottom-height (meters -130)
+                           :bottom-height (meters -400)
                            :run-packages '()
                            :wait-for-load #t
                            )

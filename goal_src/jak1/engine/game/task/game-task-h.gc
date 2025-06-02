@@ -124,4 +124,16 @@
   (plunger-lurker-hit 113)
   (leaving-misty 114)
   (assistant-village3 115)
-  (max 116))
+  ;; EBR note: CUSTOM TASKS
+  ;; dummy task needed before custom tasks
+  (dummy 116)
+  ;; HID-BEACH
+  (hid-beach-findcell 117)
+  (hid-beach-crate 118)
+  (hid-beach-woods 119);;zeppelin
+  (hid-beach-cave 120)
+  (hid-beach-summit 121);;basement
+  (hid-beach-buzzer 122)
+  ;; EBR note: changed the max to last num +1
+  (max 123)
+  )
