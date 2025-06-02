@@ -35,7 +35,27 @@ if the result of rand-vu-int-range is 1, then DANCE! if it is not 1, then Don't 
 ;; Define Settings to use in mods
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(define *debug-continue-point* "village1-hut")
+(define *debug-continue-point*
+
+;; EBR note: added a list of custom continue points
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Custom Debug Continue Point List:
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Base Game Levels:
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; "village1-hut"
+;; "jungle-start"
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Test Levels:
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; "test-zone-start"
+ "hid-beach-start"
+;; "hid-beach-warp"
+
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Define Custom Settings Variables to use in mods
@@ -49,6 +69,9 @@ if the result of rand-vu-int-range is 1, then DANCE! if it is not 1, then Don't 
 
 ;; Change #f to #t here to show the input display by default
 (define *show-input-display* #f)
+
+;; EBR note: turn off vibration by default
+(false! (-> *setting-control* default vibration))
 
 ;; do NOT change %MODVERSIONPLACEHOLDER% below, otherwise the mod-bundling-tools
 ;;   will be unable to automatically add version info to the speedrun display

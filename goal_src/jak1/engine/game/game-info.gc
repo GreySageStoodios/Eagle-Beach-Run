@@ -474,7 +474,15 @@
          (set-time! (-> this buzzer-pickup-time)))
        (set! (-> this buzzer) buzz-count))
      (-> this buzzer))
-    (((pickup-type eco-red) (pickup-type eco-blue) (pickup-type eco-yellow))
+    ;; EBR note: added custom eco types, and put in list format
+    ((
+    (pickup-type eco-red) 
+    (pickup-type eco-blue) 
+    (pickup-type eco-yellow) 
+    (pickup-type eco-darkk) 
+    (pickup-type eco-whyte) 
+    (pickup-type eco-lightt)
+    )
      ;; the green vent jumps here.
      (label cfg-80)
      ;; if the amount is zero, we just want to know how much eco there is.
@@ -516,7 +524,12 @@
            (((pickup-type eco-blue)) (sound-play "get-blue-eco"))
            (((pickup-type eco-green)) (sound-play "get-green-eco"))
            (((pickup-type eco-yellow)) (sound-play "get-yellow-eco"))
-           (((pickup-type eco-red)) (sound-play "get-red-eco"))))
+           (((pickup-type eco-red)) (sound-play "get-red-eco"))
+           ;; EBR note: added custom eco link to sounds
+           (((pickup-type eco-darkk)) (sound-play "get-blue-eco"))
+           (((pickup-type eco-whyte)) (sound-play "get-blue-eco"))
+           (((pickup-type eco-lightt)) (sound-play "get-blue-eco"))
+           ))
        (set! (-> this eco-source) source-handle)
        (set-time! (-> this eco-source-time))
        ;; special case for blue eco magnet effect

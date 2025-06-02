@@ -144,4 +144,7 @@
   (defmacro activate-big-collide-cache! ()
     `(set! *collide-cache-max-tris* BIG_COLLIDE_CACHE_SIZE)))
 
+;;EBR note: added this to up the cache
+(activate-big-collide-cache!)
+
 (define-perm *collide-list* collide-list (new 'global 'collide-list))

@@ -1659,6 +1659,17 @@
 ;; the DGO file
 (custom-level-cgo "TSZ.DGO" "test-zone/testzone.gd")
 
+;; EBR note: added custom levels
+;; following the chronological order of "base_id" #s from the level jsons
+
+;;;;;;;;;;;;;;;;;;;;
+;; Custom Levels: ;;
+;;;;;;;;;;;;;;;;;;;;
+
+;; Testing
+(build-custom-level "hid-beach")
+(custom-level-cgo "HDB.DGO" "hid-beach/hidbeach.gd")
+
 ;; generate the art group for a custom actor.
 ;; requires a .glb model file in custom_assets/jak1/models/custom_levels
 ;; to also generate a collide-mesh, add :gen-mesh #t

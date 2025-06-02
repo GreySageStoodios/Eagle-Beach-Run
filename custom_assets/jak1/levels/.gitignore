@@ -1,0 +1,5 @@
+# Ignore all .glb files
+*.glb
+
+# But do NOT ignore this specific one (must come AFTER the ignore rule)
+!custom_assets/jak1/levels/test-zone/test-zone2.glb
