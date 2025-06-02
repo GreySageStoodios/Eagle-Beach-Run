@@ -38,11 +38,11 @@
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; level stuff (custom particles, objects):
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;;"hidbeach-obs.o";;
-  ;;"hidbeach-part.o";;
+  "hidbeach-obs.o";;
+  "hidbeach-part.o";;
   ;;"beach-part.o" ;; particles-beach (waterfall)
   ;;"training-part.o" ;; particles-training (warpgate)
-  ;;"villagep-obs.o" ;; obs-villagep (warpgate);;
+  "villagep-obs.o" ;; obs-villagep (warpgate);;
   ;;"village-obs.o" ;; obs-village (med-res levels)
   ;;"village1-part.o" ;; particles-village1 (med-res levels)
   ;;"village1-part2.o" ;; particles-village1 (med-res levels)
@@ -265,23 +265,25 @@
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Warp Gate Pieces:
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;;"warp-gate-switch-ag.go";;
-  ;;"warpgate-ag.go";;
+  "warp-gate-switch-ag.go"
+  "warpgate-ag.go"
   ;;"warpgate.o"
   ;;"basebutton.o"
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Door stuff:
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;;"sun-iris-door.o" ;; iris door - sunken level;;
-  ;;"sun-iris-door-ag.go" ;; iris door - sunken level;;
-  ;;"jng-iris-door-ag.go" ;; eco door - geyser level;;
+  "sun-iris-door.o" ;; iris door - sunken level;;
+  "sun-iris-door-ag.go" ;; iris door - sunken level;;
+  "jng-iris-door-ag.go" ;; eco door - geyser level;;
   ;;"launcherdoor.o"
   ;;"launcherdoor-ag.go"
   ;;"maindoor-ag.go"
+  "harvester-ag.go" ;; eco harvester
+  ;;"ecoventrock-ag.go" ;; ecovent rock
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Breakable Boulder stuff:
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;;"shortcut-boulder-ag.go" ;; ogre breakable rock
+  "shortcut-boulder-ag.go" ;; ogre breakable rock
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Enemies stuff:
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -2131,6 +2131,14 @@
 
 (goal-src "levels/test-zone/test-zone-obs.gc" "process-drawable")
 
+;; EBR note: Custom part and obs files for custom levels
+
+(goal-src-sequence
+ "levels/hidbeach/"
+ :deps ("$OUT/obj/ticky.o")
+ "hidbeach-obs.gc"
+ "hidbeach-part.gc"
+ )
 
 (group-list "all-code"
   `(,@(reverse *all-gc*))
